@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"list_screenTransitionTypes",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"list_screenTransitionTypes",
+  "parent":{
+    "name":"screenTransition",
+    "path":"folders/screenTransition.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
