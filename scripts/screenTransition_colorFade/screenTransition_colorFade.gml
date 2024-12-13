@@ -6,8 +6,7 @@ function screenTransition_colorFade(
 	fadeSpeed = undefined,
 	delayIn = undefined,
 	delayOut = undefined,
-	colorIn = undefined,
-	colorOut = undefined
+	color = undefined,
 )
 {
 	screenTransition(
@@ -15,13 +14,13 @@ function screenTransition_colorFade(
 		layerToUse,
 		,
 		ST_FADE,
-		colorOut,
+		color,
 		fadeSpeed,
 		,
 		,
 		delayIn,
 		ST_FADE,
-		colorIn,
+		color,
 		,
 		
 	)
