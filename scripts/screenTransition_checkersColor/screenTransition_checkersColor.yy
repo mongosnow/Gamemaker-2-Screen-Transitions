@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"screenTransition_screenshotCheckersColor",
+  "%Name":"screenTransition_checkersColor",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"screenTransition_screenshotCheckersColor",
+  "name":"screenTransition_checkersColor",
   "parent":{
     "name":"Preset Animations",
     "path":"folders/screenTransition/Functions (Call these)/Preset Animations.yy",

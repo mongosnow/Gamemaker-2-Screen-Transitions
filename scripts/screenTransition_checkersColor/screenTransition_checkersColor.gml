@@ -1,7 +1,7 @@
 // Will instantly cut away to next room then tear down screenshot with a checker pattern
 // Change defualts if needed
 
-function screenTransition_screenshotCheckersColor(
+function screenTransition_checkersColor(
 	changeRoomTo, 
 	delayOut = undefined,
 	ST_checker_type_out = ST_CHECKER_DIAGONAL_UP_LEFT_TO_DOWN_RIGHT, // MUST BE A CHECKER TYPE
