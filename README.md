@@ -1,5 +1,5 @@
 # What is this?
-### **A Gamemaker 2 asset pack that adds functions to do fancy room transition animations**
+### **A Gamemaker 2 asset pack that adds functions to do fancy screen transition animations**
 
 It essentially replaces the room_goto() function and adds animations that hide the room change
 
