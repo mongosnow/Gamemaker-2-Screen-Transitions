@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"screenTransition_checkersColor",
   "parent":{
-    "name":"Preset Animations",
-    "path":"folders/screenTransition/Functions (Call these)/Preset Animations.yy",
+    "name":"Not Done",
+    "path":"folders/screenTransition/Functions (Call these)/Not Done.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

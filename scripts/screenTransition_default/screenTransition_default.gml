@@ -2,5 +2,5 @@
 
 function screenTransition_default(changeRoomTo)
 {
-	screenTransition(changeRoomTo)
+	//screenTransition(changeRoomTo)
 }

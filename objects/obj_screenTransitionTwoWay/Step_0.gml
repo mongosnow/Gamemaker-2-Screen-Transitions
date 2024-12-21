@@ -10,13 +10,14 @@ if _doneAnim = false //if have not swapped rooms yet, do animation
 		_layerToUse, 
 		_isScreenshotOut,
 		_colorOut, 
-		_fadeSpeedOut,
 		_checkerTransformScaleOut
 	)
 	
+	//FADE
+	global.screenTransitionObject._fadeSpeed = _fadeSpeedOut //for fade type, speed of anim
+	
 	_doneAnim = true
 }
-
 if _doNext //after swapping rooms, do in anim and kill self
 {
 	_screenTransition_oneWay(
@@ -27,9 +28,11 @@ if _doNext //after swapping rooms, do in anim and kill self
 		_layerToUse, 
 		_isScreenshotIn,
 		_colorIn, 
-		_fadeSpeedIn,
 		_checkerTransformScaleIn
 	)
+	
+	//FADE
+	global.screenTransitionObject._fadeSpeed = _fadeSpeedIn //for fade type, speed of anim
 	
 	instance_destroy(self)
 }

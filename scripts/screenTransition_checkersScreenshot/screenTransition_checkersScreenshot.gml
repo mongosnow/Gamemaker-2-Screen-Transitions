@@ -8,7 +8,7 @@ function screenTransition_checkersScreenshot(
 	layerToUse = undefined
 )
 {
-	screenTransition(
+	_screenTransition_twoWay(
 		changeRoomTo,
 		layerToUse,
 		,

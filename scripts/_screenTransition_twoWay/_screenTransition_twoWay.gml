@@ -4,7 +4,7 @@
 
 // If the specified layer does not exist, one will be created at a depth 1 lower than all other layers
 
-function screenTransition(
+function _screenTransition_twoWay(
 	changeRoomTo, // room to change to on out anim
 	
 	layerToUse = SCREEN_TRANSITION_DEFAULT_LAYER, // layer that will be used for animation
@@ -13,7 +13,6 @@ function screenTransition(
 	delayOut		=	undefined,	// delay before changing rooms
 	ST_typeOut		=	undefined,	// style to use on out anim
 	colorOut		=	undefined,	// color to use on out anim
-	fadeSpeedOut	=	undefined,	// speed at which color fades for fade anim out
 	checkerScaleOut =	undefined,	// how the checkers will animate on out anim if checkers
 	
 	// in //
@@ -21,7 +20,6 @@ function screenTransition(
 	delayIn			=	undefined,	// delay on in anim
 	ST_typeIn		=	undefined,	// style of in anim
 	colorIn			=	undefined,	// color of in anim
-	fadeSpeedIn		=	undefined,	// speed at which color fades for fade anim in
 	checkerScaleIn	=	undefined	// how the checkers will animate on in anim
 )
 {
@@ -41,7 +39,6 @@ function screenTransition(
 		transition._delayOut		=	delayOut
 		transition._ST_typeOut		=	ST_typeOut
 		transition._colorOut		=	colorOut
-		transition._fadeSpeedOut	=	fadeSpeedOut
 		transition._checkerTransformScaleOut = checkerScaleOut
 		
 		//in animation variables
@@ -49,7 +46,6 @@ function screenTransition(
 		transition._delayIn			=	delayIn
 		transition._ST_typeIn		=	ST_typeIn
 		transition._colorIn			=	colorIn
-		transition._fadeSpeedIn		=	fadeSpeedIn
 		transition._checkerTransformScaleIn = checkerScaleIn
 		
 		transition._layerToUse = layerToUse

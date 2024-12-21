@@ -1,12 +1,12 @@
 {
   "$GMObject":"",
-  "%Name":"Object4",
+  "%Name":"obj_testTransitions",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"Object4",
+  "name":"obj_testTransitions",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",

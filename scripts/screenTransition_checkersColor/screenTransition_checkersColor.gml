@@ -13,7 +13,7 @@ function screenTransition_checkersColor(
 	layerToUse = undefined
 )
 {
-	screenTransition(
+	_screenTransition_twoWay(
 		changeRoomTo,
 		layerToUse,
 		delayOut,

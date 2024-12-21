@@ -13,7 +13,6 @@ function _screenTransition_oneWay(
 	layerToUse = SCREEN_TRANSITION_DEFAULT_LAYER,
 	isScreenshot = false,
 	color = SCREEN_TRANSITION_DEFAULT_COLOR,
-	fadeSpeed = SCREEN_TRANSITION_DEFAULT_FADE_SPEED,
 	checkerTransformScale = SCREEN_TRANSITION_DEFAULT_CHECKER_TRANSFORM
 )
 {
@@ -50,7 +49,6 @@ function _screenTransition_oneWay(
 		_color		= color			//for drawing shapes and fade screen
 		_delay		= delay			//ammount to delay by
 		_isSurface	= isScreenshot	//should it take a screenshot
-		_fadeSpeed	= fadeSpeed		//for fade type, speed
 		_roomChange = changeRoomTo	//if out
 		_inOrOut	= inOrOut		//transition in or out
 		_fadeAlpha	= inOrOut		//set alpha
