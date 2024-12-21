@@ -1,6 +1,6 @@
 {
   "$GMRoom":"v1",
-  "%Name":"Room2",
+  "%Name":"rm_2",
   "creationCodeFile":"",
   "inheritCode":false,
   "inheritCreationOrder":false,
@@ -25,7 +25,7 @@
         {"name":"g_BoxesPalette","type":2,"value":"_filter_boxes_palette",},
       ],"resourceType":"GMRBackgroundLayer","resourceVersion":"2.0","spriteId":null,"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
   ],
-  "name":"Room2",
+  "name":"rm_2",
   "parent":{
     "name":"Rooms",
     "path":"folders/Rooms.yy",

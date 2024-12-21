@@ -1,6 +1,6 @@
 {
   "$GMProject":"",
-  "%Name":"Package - screenTransition",
+  "%Name":"Gamemaker 2 Screen Transitions",
   "AudioGroups":[
     {"$GMAudioGroup":"","%Name":"audiogroup_default","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
   ],
@@ -38,14 +38,14 @@
   "MetaData":{
     "IDEVersion":"2024.8.1.171",
   },
-  "name":"Package - screenTransition",
+  "name":"Gamemaker 2 Screen Transitions",
   "resources":[
     {"id":{"name":"obj_screenTransitionController","path":"objects/obj_screenTransitionController/obj_screenTransitionController.yy",},},
     {"id":{"name":"obj_screenTransitionTwoWay","path":"objects/obj_screenTransitionTwoWay/obj_screenTransitionTwoWay.yy",},},
     {"id":{"name":"obj_ST_checker","path":"objects/obj_ST_checker/obj_ST_checker.yy",},},
     {"id":{"name":"Object4","path":"objects/Object4/Object4.yy",},},
-    {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
-    {"id":{"name":"Room2","path":"rooms/Room2/Room2.yy",},},
+    {"id":{"name":"rm_1","path":"rooms/rm_1/rm_1.yy",},},
+    {"id":{"name":"rm_2","path":"rooms/rm_2/rm_2.yy",},},
     {"id":{"name":"_lowestLayerDepthReturn","path":"scripts/_lowestLayerDepthReturn/_lowestLayerDepthReturn.yy",},},
     {"id":{"name":"_screenTransition_oneWay","path":"scripts/_screenTransition_oneWay/_screenTransition_oneWay.yy",},},
     {"id":{"name":"_screenTransitionDelayTimerReturn","path":"scripts/_screenTransitionDelayTimerReturn/_screenTransitionDelayTimerReturn.yy",},},
@@ -60,7 +60,6 @@
     {"id":{"name":"screenTransition_colorFade","path":"scripts/screenTransition_colorFade/screenTransition_colorFade.yy",},},
     {"id":{"name":"screenTransition_default","path":"scripts/screenTransition_default/screenTransition_default.yy",},},
     {"id":{"name":"screenTransition_screenshotFade","path":"scripts/screenTransition_screenshotFade/screenTransition_screenshotFade.yy",},},
-    {"id":{"name":"screenTransition","path":"scripts/screenTransition/screenTransition.yy",},},
     {"id":{"name":"sys_ST_checker","path":"scripts/sys_ST_checker/sys_ST_checker.yy",},},
     {"id":{"name":"sys_ST_fade","path":"scripts/sys_ST_fade/sys_ST_fade.yy",},},
     {"id":{"name":"sys_surfaceDrawFunctions","path":"scripts/sys_surfaceDrawFunctions/sys_surfaceDrawFunctions.yy",},},
@@ -69,8 +68,8 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
-    {"roomId":{"name":"Room2","path":"rooms/Room2/Room2.yy",},},
+    {"roomId":{"name":"rm_1","path":"rooms/rm_1/rm_1.yy",},},
+    {"roomId":{"name":"rm_2","path":"rooms/rm_2/rm_2.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
