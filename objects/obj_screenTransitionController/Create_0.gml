@@ -24,7 +24,7 @@ _checkerSize = SCREEN_TRANSITION_DEFAULT_CHECKER_SIZE
 _checkerCountW = SCREEN_TRANSITION_DEFAULT_WIDTH / _checkerSize
 _checkerCountH = SCREEN_TRANSITION_DEFAULT_HEIGHT / _checkerSize
 _rectangleBG = false
-_checkerTransformScale = SCREEN_TRANSITION_DEFAULT_CHECKER_TRANSFORM //for vertical or horizontal
+_checkerTransformScale = CHECKER_TRANSFORM_BOTH //for vertical or horizontal
 
 //fade
 _fadeSpeed = SCREEN_TRANSITION_DEFAULT_FADE_SPEED

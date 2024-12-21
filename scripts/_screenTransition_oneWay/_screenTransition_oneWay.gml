@@ -13,7 +13,7 @@ function _screenTransition_oneWay(
 	layerToUse = SCREEN_TRANSITION_DEFAULT_LAYER,
 	isScreenshot = false,
 	color = SCREEN_TRANSITION_DEFAULT_COLOR,
-	checkerTransformScale = SCREEN_TRANSITION_DEFAULT_CHECKER_TRANSFORM
+	checkerTransformScale = CHECKER_TRANSFORM_BOTH
 )
 {
 	// garbage collection if checker objects are on screen
@@ -28,12 +28,7 @@ function _screenTransition_oneWay(
 	
 	// automatically set default transition types if not defined
 	if ST_type = undefined
-	{
-		if inOrOut = IN_ST
-			ST_type = ST_IN_DEFAULT
-		else
-			ST_type = ST_OUT_DEFAULT
-	}
+		ST_type = ST_NONE
 		
 	// if the layer is not specified specifically, make or move the transition layer to the very front
 	if layerToUse = SCREEN_TRANSITION_DEFAULT_LAYER 
