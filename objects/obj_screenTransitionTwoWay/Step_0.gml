@@ -9,12 +9,16 @@ if _doneAnim = false //if have not swapped rooms yet, do animation
 		_ST_typeOut, 
 		_layerToUse, 
 		_isScreenshotOut,
-		_colorOut, 
-		_checkerTransformScaleOut
+		_colorOut
 	)
 	
+	#region specific variables
 	//FADE
-	global.screenTransitionObject._fadeSpeed = _fadeSpeedOut //for fade type, speed of anim
+	global.screenTransitionObject._fadeSpeed = _fadeSpeedOut
+	
+	//CHECKERS
+	global.screenTransitionObject._checkerTransformScale = _checkerTransformScaleOut
+	#endregion
 	
 	_doneAnim = true
 }
@@ -27,12 +31,16 @@ if _doNext //after swapping rooms, do in anim and kill self
 		_ST_typeIn, 
 		_layerToUse, 
 		_isScreenshotIn,
-		_colorIn, 
-		_checkerTransformScaleIn
+		_colorIn
 	)
 	
+	#region specific variables
 	//FADE
-	global.screenTransitionObject._fadeSpeed = _fadeSpeedIn //for fade type, speed of anim
+	global.screenTransitionObject._fadeSpeed = _fadeSpeedIn
+	
+	//CHECKERS
+	global.screenTransitionObject._checkerTransformScale = _checkerTransformScaleIn
+	#endregion
 	
 	instance_destroy(self)
 }

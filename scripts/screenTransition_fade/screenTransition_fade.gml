@@ -16,12 +16,10 @@ function screenTransition_fade(
 		,
 		ST_FADE,
 		color,
-		,
 		false,
 		delayIn,
 		ST_FADE,
-		color,
-		
+		color
 	)
 	
 	obj_screenTransitionTwoWay._fadeSpeedOut = fadeSpeedOut

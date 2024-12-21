@@ -13,14 +13,12 @@ function _screenTransition_twoWay(
 	delayOut		=	undefined,	// delay before changing rooms
 	ST_typeOut		=	undefined,	// style to use on out anim
 	colorOut		=	undefined,	// color to use on out anim
-	checkerScaleOut =	undefined,	// how the checkers will animate on out anim if checkers
 	
 	// in //
 	isScreenshotIn	=	false,		// use screenshot on in anim or not
 	delayIn			=	undefined,	// delay on in anim
 	ST_typeIn		=	undefined,	// style of in anim
-	colorIn			=	undefined,	// color of in anim
-	checkerScaleIn	=	undefined	// how the checkers will animate on in anim
+	colorIn			=	undefined	// color of in anim
 )
 {
 	// spawn animation controller with specific animation variables
@@ -39,14 +37,12 @@ function _screenTransition_twoWay(
 		transition._delayOut		=	delayOut
 		transition._ST_typeOut		=	ST_typeOut
 		transition._colorOut		=	colorOut
-		transition._checkerTransformScaleOut = checkerScaleOut
 		
 		//in animation variables
 		transition._isScreenshotIn	=	isScreenshotIn
 		transition._delayIn			=	delayIn
 		transition._ST_typeIn		=	ST_typeIn
 		transition._colorIn			=	colorIn
-		transition._checkerTransformScaleIn = checkerScaleIn
 		
 		transition._layerToUse = layerToUse
 	}

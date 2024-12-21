@@ -15,11 +15,9 @@ function screenTransition_fade_screenshot(
 		,
 		ST_NONE,
 		,
-		,
 		true,
 		delayIn,
 		ST_FADE,
-		,
 		
 	)
 	

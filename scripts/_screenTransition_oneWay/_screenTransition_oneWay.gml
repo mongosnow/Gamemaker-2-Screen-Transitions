@@ -12,8 +12,7 @@ function _screenTransition_oneWay(
 	ST_type = undefined,
 	layerToUse = SCREEN_TRANSITION_DEFAULT_LAYER,
 	isScreenshot = false,
-	color = SCREEN_TRANSITION_DEFAULT_COLOR,
-	checkerTransformScale = CHECKER_TRANSFORM_BOTH
+	color = SCREEN_TRANSITION_DEFAULT_COLOR
 )
 {
 	// garbage collection if checker objects are on screen
@@ -47,9 +46,8 @@ function _screenTransition_oneWay(
 		_roomChange = changeRoomTo	//if out
 		_inOrOut	= inOrOut		//transition in or out
 		_fadeAlpha	= inOrOut		//set alpha
-		_state = 0					//reset action in case
 		
-		_checkerTransformScale = checkerTransformScale // set how the checker pattern will be scaled
+		_state = 0					//reset action in case
 		
 		_transitionDo = true //activate
 	}
