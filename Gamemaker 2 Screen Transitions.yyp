@@ -60,6 +60,7 @@
     {"id":{"name":"screenTransition_colorFade","path":"scripts/screenTransition_colorFade/screenTransition_colorFade.yy",},},
     {"id":{"name":"screenTransition_default","path":"scripts/screenTransition_default/screenTransition_default.yy",},},
     {"id":{"name":"screenTransition_screenshotFade","path":"scripts/screenTransition_screenshotFade/screenTransition_screenshotFade.yy",},},
+    {"id":{"name":"screenTransition","path":"scripts/screenTransition/screenTransition.yy",},},
     {"id":{"name":"sys_ST_checker","path":"scripts/sys_ST_checker/sys_ST_checker.yy",},},
     {"id":{"name":"sys_ST_fade","path":"scripts/sys_ST_fade/sys_ST_fade.yy",},},
     {"id":{"name":"sys_surfaceDrawFunctions","path":"scripts/sys_surfaceDrawFunctions/sys_surfaceDrawFunctions.yy",},},
