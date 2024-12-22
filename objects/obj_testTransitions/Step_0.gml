@@ -7,5 +7,5 @@ if keyboard_check_pressed(vk_numpad0)
 	if room = rm
 		rm = rm_squares
 		
-	screenTransition_fade_screenshot(rm,,.01)
+	screenTransition_checkers_color(rm,,,ST_CHECKER_DIAGONAL_UP_LEFT_TO_DOWN_RIGHT,,ST_CHECKER_DIAGONAL_DOWN_RIGHT_TO_UP_LEFT,,c_yellow)
 }	

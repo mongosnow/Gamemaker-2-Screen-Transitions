@@ -18,11 +18,12 @@ function _screenTransitionSquareMake(
 		for (var h = 0; h < _checkerCountH; h ++)
 		{
 			var _square = instance_create_layer(_checkerSize * w, _checkerSize * h, layer, obj_ST_checker)
-			_transitionTimer = (_checkerCountW+1) * transitionSpeed // the ammount of time for the squares to fill the screen
 			
 			switch(type) //set delay speed based on which line
 			{
 				default: //horiztonal
+				_transitionTimer = (_checkerCountW) * transitionSpeed  // the ammount of time for the squares to fill the screen
+				
 				if !reverse
 					_square._delay = (w * transitionSpeed)
 				else
@@ -30,7 +31,7 @@ function _screenTransitionSquareMake(
 				break;
 				
 				case 1: //vertical
-				_transitionTimer = (_checkerCountH+1) * transitionSpeed
+				_transitionTimer = (_checkerCountH) * transitionSpeed
 				
 				if !reverse
 					_square._delay = (h * transitionSpeed)
@@ -39,7 +40,7 @@ function _screenTransitionSquareMake(
 				break;
 				
 				case 2: //diagonal
-				_transitionTimer = (_checkerCountW+1+_checkerCountH+1) * transitionSpeed
+				_transitionTimer = (_checkerCountW+_checkerCountH) * transitionSpeed
 				
 				if !reverse
 					_square._delay = ((h + w) * transitionSpeed)
@@ -103,7 +104,7 @@ function _ST_checker(type, reverse = false, transitionSpeed = SCREEN_TRANSITION_
 		case 1: //wait for squares to be finished
 		_transitionTimer --
 			
-		if _transitionTimer <= 0
+		if _transitionTimer <= 0 - ceil(1/SCREEN_TRANSITION_DEFAULT_CHECKER_CHANGE)
 			_state ++
 		break;
 			

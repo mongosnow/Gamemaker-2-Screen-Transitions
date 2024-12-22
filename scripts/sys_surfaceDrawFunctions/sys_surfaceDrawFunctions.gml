@@ -20,7 +20,7 @@ function _surfaceDraw(
 	// draw screenshot
 	surface_set_target(application_surface)
 	
-	if ctrl._surfaceExists // double check to really prevent crash
+	if instance_exists(ctrl) && ctrl._surfaceExists
 	{
 		if surface_exists(ctrl._surface) // draw the screenshot
 		{
