@@ -14,6 +14,10 @@ function screenTransition_checkers_color(
 	checker_transform_scale_in = CHECKER_TRANSFORM_BOTH,
 	
 	color = SCREEN_TRANSITION_DEFAULT_COLOR,
+	
+	fadeFX = SCREEN_TRANSITION_DEFAULT_CHECKER_FADEFX, //will the background fade to a color behind the checkers
+	fadeColor = SCREEN_TRANSITION_DEFAULT_CHECKER_FADECOLOR, //what color is the fade
+	
 	layerToUse = undefined
 )
 {
@@ -31,4 +35,6 @@ function screenTransition_checkers_color(
 	
 	obj_screenTransitionTwoWay._checkerTransformScaleOut = checker_transform_scale_out
 	obj_screenTransitionTwoWay._checkerTransformScaleIn = checker_transform_scale_in
+	obj_screenTransitionTwoWay._checkerFadeFX = fadeFX
+	obj_screenTransitionTwoWay._checkerFadeColor = fadeColor
 }

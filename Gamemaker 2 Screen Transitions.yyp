@@ -39,6 +39,7 @@
   },
   "name":"Gamemaker 2 Screen Transitions",
   "resources":[
+    {"id":{"name":"obj_checkerFadeGUI","path":"objects/obj_checkerFadeGUI/obj_checkerFadeGUI.yy",},},
     {"id":{"name":"obj_screenTransitionController","path":"objects/obj_screenTransitionController/obj_screenTransitionController.yy",},},
     {"id":{"name":"obj_screenTransitionTwoWay","path":"objects/obj_screenTransitionTwoWay/obj_screenTransitionTwoWay.yy",},},
     {"id":{"name":"obj_ST_checker","path":"objects/obj_ST_checker/obj_ST_checker.yy",},},

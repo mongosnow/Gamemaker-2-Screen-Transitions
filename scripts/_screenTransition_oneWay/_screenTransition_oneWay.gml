@@ -49,6 +49,7 @@ function _screenTransition_oneWay(
 		
 		_state = 0					//reset action in case
 		
+		_checkersDrawFade = false
 		_transitionDo = true //activate
 	}
 }

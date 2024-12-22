@@ -25,6 +25,8 @@ _checkerCountW = ceil(SCREEN_TRANSITION_DEFAULT_WIDTH / _checkerSize)
 _checkerCountH = ceil(SCREEN_TRANSITION_DEFAULT_HEIGHT / _checkerSize)
 _rectangleBG = false
 _checkerTransformScale = CHECKER_TRANSFORM_BOTH //for vertical or horizontal
+_transitionTimerMax = 0
+_checkersDrawFade = false
 
 //fade
 _fadeSpeed = SCREEN_TRANSITION_DEFAULT_FADE_SPEED

@@ -26,6 +26,8 @@
 #macro SCREEN_TRANSITION_DEFAULT_CHECKER_SIZE	96	// size of squares
 #macro SCREEN_TRANSITION_DEFAULT_CHECKER_CHANGE	.25 //(MUST BE DIVISIBLE BY 1) the scale at which the squares are transformed by
 
+#macro SCREEN_TRANSITION_DEFAULT_CHECKER_FADEFX true //will the area below the checkers fade to a color?
+#macro SCREEN_TRANSITION_DEFAULT_CHECKER_FADECOLOR c_black //what color fades below the checkers?
 
 // Advanced //
 

@@ -18,6 +18,8 @@ if _doneAnim = false //if have not swapped rooms yet, do animation
 	
 	//CHECKERS
 	global.screenTransitionObject._checkerTransformScale = _checkerTransformScaleOut
+	global.screenTransitionObject._checkerFadeFX = _checkerFadeFX
+	global.screenTransitionObject._checkerFadeColor = _checkerFadeColor
 	#endregion
 	
 	_doneAnim = true
@@ -40,6 +42,8 @@ if _doNext //after swapping rooms, do in anim and kill self
 	
 	//CHECKERS
 	global.screenTransitionObject._checkerTransformScale = _checkerTransformScaleIn
+	global.screenTransitionObject._checkerFadeFX = _checkerFadeFX
+	global.screenTransitionObject._checkerFadeColor = _checkerFadeColor
 	#endregion
 	
 	instance_destroy(self)

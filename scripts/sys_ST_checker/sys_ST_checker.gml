@@ -107,9 +107,25 @@ function _ST_checker(type, reverse = false, transitionSpeed = SCREEN_TRANSITION_
 			_screenTransitionSquareMake(type, grow, transitionSpeed, reverse)
 			_state ++
 		}
+		
+		_transitionTimerMax = _transitionTimer
+		_checkerStartFade = true
 		break;
 			
-		case 1: //wait for squares to be finished
+		case 1: //wait for squares to be finished and fade to color behind
+		//fade color
+		if !_isSurface && !instance_exists(obj_checkerFadeGUI)
+		{
+			if !instance_exists(obj_checkerFadeGUI)
+				instance_create_layer(x,y,layer,obj_checkerFadeGUI)
+			else{
+				with (obj_checkerFadeGUI)
+					_screenTransitionCheckerFade()	
+			}
+		}
+		else
+			_checkersDrawFade = true
+		
 		_transitionTimer --
 			
 		if _transitionTimer <= 0 - ceil(1/SCREEN_TRANSITION_DEFAULT_CHECKER_CHANGE)
@@ -128,3 +144,26 @@ function _ST_checker(type, reverse = false, transitionSpeed = SCREEN_TRANSITION_
 	}
 }
 
+function _screenTransitionCheckerFade()
+{
+	//fade color
+	if instance_exists(obj_screenTransitionController) && obj_screenTransitionController._checkerFadeFX
+	{
+		if obj_screenTransitionController._inOrOut = IN_ST
+			var checkerFade = (obj_screenTransitionController._transitionTimer/obj_screenTransitionController._transitionTimerMax)
+		else
+			var checkerFade = 1-(obj_screenTransitionController._transitionTimer/obj_screenTransitionController._transitionTimerMax)
+			
+		var x1 = 0
+		var x2 = SCREEN_TRANSITION_DEFAULT_WIDTH
+		var y1 = 0
+		var y2 = SCREEN_TRANSITION_DEFAULT_HEIGHT
+	
+		draw_set_color(obj_screenTransitionController._checkerFadeColor)
+		draw_set_alpha(checkerFade)
+		draw_rectangle(x1, y1 , x2, y2, false)
+		draw_set_alpha(1)
+	}
+	else if !instance_exists(obj_screenTransitionController)
+		instance_destroy(self)
+}

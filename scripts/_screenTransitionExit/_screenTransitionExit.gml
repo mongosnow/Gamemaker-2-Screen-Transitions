@@ -24,6 +24,7 @@ function _screenTransitionExit()
 	_transitionDo = false
 	_layerToDo = layer
 	_transitionTimer = 0
+	_checkersDrawFade = false
 	_state = 0
 	
 	if instance_exists(obj_screenTransitionTwoWay)
