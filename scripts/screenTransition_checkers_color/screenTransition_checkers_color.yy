@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"screenTransition_checkers_color",
   "parent":{
-    "name":"Not Done",
-    "path":"folders/screenTransition/Functions (Call these)/Not Done.yy",
+    "name":"Functions (Call these)",
+    "path":"folders/screenTransition/Functions (Call these).yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

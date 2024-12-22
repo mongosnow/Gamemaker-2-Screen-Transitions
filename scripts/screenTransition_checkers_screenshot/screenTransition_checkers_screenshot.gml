@@ -8,7 +8,6 @@ function screenTransition_checkers_screenshot(
 	ST_checker_type = ST_CHECKER_DIAGONAL_DOWN_RIGHT_TO_UP_LEFT, // MUST BE A CHECKER TYPE
 	checker_transform_scale = CHECKER_TRANSFORM_BOTH,
 	
-	color = SCREEN_TRANSITION_DEFAULT_COLOR,
 	layerToUse = undefined
 )
 {
@@ -17,11 +16,11 @@ function screenTransition_checkers_screenshot(
 		layerToUse,
 		,
 		ST_NONE,
-		color,
+		,
 		true,
 		delayIn,
 		ST_checker_type,
-		color
+		
 	)
 	
 	obj_screenTransitionTwoWay._checkerTransformScaleOut = checker_transform_scale

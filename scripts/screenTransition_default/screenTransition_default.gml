@@ -2,5 +2,5 @@
 
 function screenTransition_default(changeRoomTo)
 {
-	//screenTransition(changeRoomTo)
+	screenTransition_checkers_color(changeRoomTo)
 }

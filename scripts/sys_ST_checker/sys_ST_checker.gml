@@ -12,6 +12,14 @@ function _screenTransitionSquareMake(
 	
 	if _isSurface
 		surface = _surface
+	
+	var wPart = 0
+	if SCREEN_TRANSITION_DEFAULT_WIDTH / _checkerSize % _checkerCountW != 0
+		wPart = true
+		
+	var hPart = false
+	if SCREEN_TRANSITION_DEFAULT_HEIGHT / _checkerSize % _checkerCountH != 0
+		hPart = true
 		
 	for (var w = 0; w < _checkerCountW; w ++) //square draw
 	{

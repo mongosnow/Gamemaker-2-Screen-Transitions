@@ -23,7 +23,7 @@
 // Checker Transition //
 
 #macro SCREEN_TRANSITION_DEFAULT_CHECKER_DELAY	3	//the frames between each row of checkers spawning
-#macro SCREEN_TRANSITION_DEFAULT_CHECKER_SIZE	120	// size of squares
+#macro SCREEN_TRANSITION_DEFAULT_CHECKER_SIZE	96	// size of squares
 #macro SCREEN_TRANSITION_DEFAULT_CHECKER_CHANGE	.25 //(MUST BE DIVISIBLE BY 1) the scale at which the squares are transformed by
 
 
