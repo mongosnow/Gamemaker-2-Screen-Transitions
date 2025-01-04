@@ -54,9 +54,9 @@ To make it easier to use, be sure to **set up a default transition to quickly pa
 # Things you can do that may not be obvious
 - If you leave the "changeRoomTo" argument blank on the screenTransition function, it will do the animation without changing rooms.
 # To do
+- Simplify how it works and how the animations are managed
 - Make more animations (slide + scale transform)
 - Fix the screenshot drawing below the GUI layer issue
 - Add the option to specify drawing with GUI or normal draw event
 - Add the option to do the animation in a particular section of the screen rather than over the entire screen
 - Add the option to check for lowest _object_ depth
-- Refactor the code to be a bit simpler and change the names of functions and constants to make a bit more sense
