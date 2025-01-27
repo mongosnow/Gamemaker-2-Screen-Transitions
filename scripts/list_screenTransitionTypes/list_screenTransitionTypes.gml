@@ -13,6 +13,7 @@
 #macro ST_CHECKER_DOWN_TO_UP	23
 #macro ST_CHECKER_DIAGONAL_UP_LEFT_TO_DOWN_RIGHT 24
 #macro ST_CHECKER_DIAGONAL_DOWN_RIGHT_TO_UP_LEFT 25
+
 // Variables for Checkers //
 #macro CHECKER_TRANSFORM_XSCALE 0 //will change x scale from center
 #macro CHECKER_TRANSFORM_YSCALE 1 //will change y scale from center
