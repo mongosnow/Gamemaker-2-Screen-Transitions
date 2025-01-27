@@ -1,6 +1,4 @@
-/// @description Initialize
-
-#region initialize constants and functions
+/// @description Initialize constants, functions, and variables
 
 enum IS
 {
@@ -11,36 +9,22 @@ enum IS
 
 function _stResetAllVariables()
 {
+	// state
 	_state = IS.NONE
 	_state2 = 0
 	
+	animType[IS.NONE] = ST_NONE
 	animType[IS.OUT] = ST_NONE
 	animType[IS.IN] = ST_NONE
+	
+	_roomGoTo = undefined
+	
+	// general variables 
+	_color = c_black
+	
+	// put variables for specific animations here
+	
+	_stResetFadeVariables()
 }
 
-function _stStateChange()
-{
-	_state2 = 0
-}
-
-#endregion
-
-_stResetAllVariables()
-
-//put in own file
-function _stAnim_fade()
-{
-	switch(_state)
-	{
-		case IS.OUT:
-			switch(_state2)
-			{
-				case 0:
-				//do stuff
-				break;
-				
-				//etc.
-			}
-		break;
-	}
-}
+_stResetAllVariables() //initialize variables

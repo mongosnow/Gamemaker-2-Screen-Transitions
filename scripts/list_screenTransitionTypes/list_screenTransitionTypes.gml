@@ -1,18 +1,18 @@
 // Screen transition types (only edit if you add more) //
 
 // Instant transition //
-#macro ST_NONE 0
+#macro ST_NONE "NONE"
 
 // Fade //
-#macro ST_FADE 15
+#macro ST_FADE "FADE"
 
 // Checkers //
-#macro ST_CHECKER_LEFT_TO_RIGHT 20
-#macro ST_CHECKER_RIGHT_TO_LEFT 21
-#macro ST_CHECKER_UP_TO_DOWN	22
-#macro ST_CHECKER_DOWN_TO_UP	23
-#macro ST_CHECKER_DIAGONAL_UP_LEFT_TO_DOWN_RIGHT 24
-#macro ST_CHECKER_DIAGONAL_DOWN_RIGHT_TO_UP_LEFT 25
+#macro ST_CHECKER_LEFT_TO_RIGHT "CHECK_LR_0"
+#macro ST_CHECKER_RIGHT_TO_LEFT "CHECK_RL_0"
+#macro ST_CHECKER_UP_TO_DOWN	"CHECK_UD_0"
+#macro ST_CHECKER_DOWN_TO_UP	"CHECK_DU_0"
+#macro ST_CHECKER_DIAGONAL_UP_LEFT_TO_DOWN_RIGHT "CHECK_ULDR_0"
+#macro ST_CHECKER_DIAGONAL_DOWN_RIGHT_TO_UP_LEFT "CHECK_DRUL_0"
 
 // Variables for Checkers //
 #macro CHECKER_TRANSFORM_XSCALE 0 //will change x scale from center

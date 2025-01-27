@@ -2,20 +2,22 @@
 
 if _state > 0
 {
-	var st = _state
-
-	switch(animType[st])
+	// change room after out animation finishes if room is set
+	if _state = IS.IN && _roomGoTo != undefined
+		_anim_roomChange()
+	
+	#region Do animations
+	switch(animType[_state])
 	{
-		case ST_CHECKER:
-		//function for checker anim(st)
+		case ST_FADE:
+		_stFade()
 		break;
 		
-		//etc.
+		default: //ST_NONE
+		_stNone()
+		break;
 	}
+	#endregion
 	
-	if _state > IS.IN
-	{
-		//reset all vars function(true)
-		_state = IS.NONE
-	}
+	
 }

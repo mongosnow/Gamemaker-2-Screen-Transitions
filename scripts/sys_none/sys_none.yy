@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"sys_none",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"sys_none",
+  "parent":{
+    "name":"Animations",
+    "path":"folders/screenTransition/System/Drawing/Animations.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

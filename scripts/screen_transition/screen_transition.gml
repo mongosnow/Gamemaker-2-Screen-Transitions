@@ -1,4 +1,4 @@
-function screenTransition(outAnim, inAnim)
+function screenTransition(roomGoTo = undefined, outAnim, inAnim)
 {
 	//spawn
 	//with obj screen transition
@@ -10,7 +10,7 @@ function screenTransition(outAnim, inAnim)
 }
 
 //secondary
-function screenTransitionOneWay(inAnim)
+function screenTransitionOneWay(roomGoTo = undefined, inAnim)
 {
 	screenTransition(0, inAnim)
 	obj_stController._state = 1 //set to wait state

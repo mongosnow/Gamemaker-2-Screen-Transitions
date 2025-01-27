@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"screenTransition",
+  "%Name":"screen_transition",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"screenTransition",
+  "name":"screen_transition",
   "parent":{
     "name":"Functions (Call these)",
     "path":"folders/screenTransition/Functions (Call these).yy",

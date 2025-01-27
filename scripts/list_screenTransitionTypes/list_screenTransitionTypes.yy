@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"list_screenTransitionTypes",
   "parent":{
-    "name":"screenTransition",
-    "path":"folders/screenTransition.yy",
+    "name":"Functions (Call these)",
+    "path":"folders/screenTransition/Functions (Call these).yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
