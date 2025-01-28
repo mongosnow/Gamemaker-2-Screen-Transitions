@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"_screenTransitionSetLayer",
   "parent":{
-    "name":"Spawning and Layer Management",
-    "path":"folders/screenTransition/System/Spawning and Layer Management.yy",
+    "name":"Spawning Layers and Depth Management",
+    "path":"folders/screenTransition/System/Spawning Layers and Depth Management.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

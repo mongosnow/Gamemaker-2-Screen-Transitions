@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"_screenTransitionSpawnAndSet",
+  "%Name":"_lowestObjectDepthReturn",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"_screenTransitionSpawnAndSet",
+  "name":"_lowestObjectDepthReturn",
   "parent":{
     "name":"Spawning Layers and Depth Management",
     "path":"folders/screenTransition/System/Spawning Layers and Depth Management.yy",

@@ -7,5 +7,5 @@ if keyboard_check_pressed(vk_numpad0)
 	if room = rm
 		rm = rm_squares
 		
-	screenTransition_checkers_screenshot(rm)
+	 screenTransition(rm)
 }	
