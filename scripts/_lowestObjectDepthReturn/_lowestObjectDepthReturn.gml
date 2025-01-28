@@ -1,5 +1,4 @@
 // Return the value of the lowest depth with offset added
-// can specifiy a layer to exclude if necessary
 
 function _lowestObjectDepthReturn(offsetOfReturn = -1)
 {
