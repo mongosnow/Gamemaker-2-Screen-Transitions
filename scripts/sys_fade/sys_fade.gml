@@ -1,7 +1,12 @@
 function _stResetFadeVariables() //for variable reset function
 {
-	_fadeSpeed = .02
+	_fadeSpeed = DEFAULT_FADESPEED
 	_fadeAlpha = 0
+}
+
+function screenTransition_setFadeVariables(fadeSpeedIn = DEFAULT_FADESPEED, fadeSpeedOut = DEFAULT_FADESPEED)
+{
+	
 }
 
 function _stFade()

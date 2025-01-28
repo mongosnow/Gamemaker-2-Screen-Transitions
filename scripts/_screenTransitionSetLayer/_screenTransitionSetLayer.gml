@@ -17,4 +17,4 @@ function _screenTransitionCreateLayerAndSetDepth(layerToUse, loopThroughObjects 
 	// else set layer to be below the other layers if it already exists
 	else
 		layer_depth(layerToUse, depthToUse)
-}*
+}

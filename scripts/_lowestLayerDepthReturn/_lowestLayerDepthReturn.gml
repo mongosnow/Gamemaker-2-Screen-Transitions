@@ -1,7 +1,7 @@
 // Return the value of the lowest depth with offset added
 // can specifiy a layer to exclude if necessary
 
-function _lowestLayerDepthReturn(offsetOfReturn = -1, exclude = SCREEN_TRANSITION_DEFAULT_LAYER)
+function _lowestLayerDepthReturn(offsetOfReturn = -1, exclude = SCREEN_TRANSITION_LAYER)
 {
 	var layers = layer_get_all() //make temp array of all layers
 	var layersDepthMax = 0
