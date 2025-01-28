@@ -4,7 +4,8 @@
 #macro ST_NONE "NONE"
 
 // Fade //
-#macro ST_FADE "FADE"
+#macro ST_FADE "FADE_0"
+//ST_FADE_SURFACE_IN "FADE_1" //in only
 
 // Checkers //
 #macro ST_CHECKER_LEFT_TO_RIGHT "CHECK_LR_0"

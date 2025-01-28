@@ -2,11 +2,11 @@
 
 if _state > 0
 {
-	// change room after out animation finishes if room is set
+	// Change room after out animation finishes if _roomGoTo is set
 	if _state = IS.IN && _roomGoTo != undefined
 		_anim_roomChange()
 	
-	#region Do animations
+	// Do animations
 	switch(animType[_state])
 	{
 		case ST_FADE:
@@ -17,7 +17,4 @@ if _state > 0
 		_stNone()
 		break;
 	}
-	#endregion
-	
-	
 }
