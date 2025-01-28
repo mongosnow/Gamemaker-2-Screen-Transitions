@@ -1,8 +1,8 @@
 /// @description Do animations
 
-if _state > 0
+if _state < 2
 {
-	// Change room after out animation finishes if room is set
+	// Change room after out animation finishes if _roomGoTo is set
 	if _state = IS.IN && _roomGoTo != undefined
 		_anim_roomChange()
 	

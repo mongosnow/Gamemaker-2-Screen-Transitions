@@ -15,12 +15,12 @@ function screenTransition(roomGoTo = undefined, outAnim = ST_NONE, inAnim = ST_N
 	with obj_stController
 	{
 		_stResetAllVariables()
-		animType = [ST_NONE, outAnim, inAnim]
+		animType = [outAnim, inAnim]
 		_roomGoTo = roomGoTo
 		
 		if outAnim = ST_NONE
-			_state = 2 //set to in, will immediately change rooms
+			_state = IS.IN //set to in, will immediately change rooms
 		else
-			_state = 1 //set to out
+			_state = IS.OUT //set to out
 	}
 }

@@ -2,9 +2,9 @@
 
 enum IS
 {
-	NONE = 0,
-	OUT = 1,
-	IN = 2
+	OUT = 0,
+	IN = 1,
+	NONE = 2
 }
 
 function _stResetAllVariables()
@@ -13,9 +13,9 @@ function _stResetAllVariables()
 	_state = IS.NONE
 	_state2 = 0
 	
-	animType[IS.NONE] = ST_NONE
 	animType[IS.OUT] = ST_NONE
 	animType[IS.IN] = ST_NONE
+	animType[IS.NONE] = ST_NONE
 	
 	_roomGoTo = undefined
 	
