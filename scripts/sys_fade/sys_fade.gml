@@ -1,12 +1,13 @@
 function _stResetFadeVariables() //for variable reset function
 {
-	_fadeSpeed = DEFAULT_FADESPEED
+	_fadeSpeed = [DEFAULT_FADESPEED, DEFAULT_FADESPEED]
 	_fadeAlpha = 0
 }
 
+//maybe move this \/\/\/\/\/
 function screenTransition_setFadeVariables(fadeSpeedIn = DEFAULT_FADESPEED, fadeSpeedOut = DEFAULT_FADESPEED)
 {
-	
+	_fadeSpeed = [fadeSpeedIn, fadeSpeedOut]
 }
 
 function _stFade()
@@ -20,14 +21,18 @@ function _stFade()
 		{
 			case 0:
 			//draw fade rectangle
+			_fadeAlpha = 0
+			_anim_coverScreen_SolidColor()
 			_state2 ++
 			break;
 			
 			case 1:
 			//check if fade out not completed
 			//fade out
-			//else
-			_state2 ++
+			if _fadeAlpha < 1
+				_fadeAlpha += _fadeSpeed[IS.OUT]
+			else
+				_state2 ++
 			break;
 			
 			case 2:
@@ -46,7 +51,8 @@ function _stFade()
 		{
 			case 0:
 			//draw fade rectangle
-			//undraw black rectangle
+			//undraw black rectangle 
+			_fadeAlpha = 1
 			_state2 ++
 			break;
 			

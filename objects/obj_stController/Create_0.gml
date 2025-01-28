@@ -19,7 +19,8 @@ function _stResetAllVariables()
 	
 	_roomGoTo = undefined
 	
-	// general variables 
+	// general variables
+	_drawEvent = DEFAULT_DRAWEVENT
 	_color = c_black
 	
 	// put variables for specific animations here
