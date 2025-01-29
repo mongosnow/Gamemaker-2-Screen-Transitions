@@ -1,6 +1,7 @@
 function _stResetFadeVariables() //for variable reset function
 {
 	_fadeSpeed = [DEFAULT_FADESPEED_0, DEFAULT_FADESPEED_1]
+	_fadeAccel = [DEFAULT_FADEACCEL_0, DEFAULT_FADEACCEL_1]
 	_fadeAlpha = 0
 }
 
@@ -24,7 +25,10 @@ function _stFade(useScreenshot = false)
 			
 				case 1: // Increase alpha until it's 1
 				if _fadeAlpha < 1
-					_fadeAlpha += _fadeSpeed[IS.OUT]
+				{
+					_fadeAlpha += _fadeSpeed[IS.OUT] // Increment
+					_fadeSpeed[IS.OUT] += _fadeAccel[IS.OUT] // Animation speed increase
+				}
 				else
 					_state2 ++
 				break;
@@ -52,7 +56,10 @@ function _stFade(useScreenshot = false)
 			
 			case 1: // Increase alpha until it's 0
 			if _fadeAlpha > 0
-				_fadeAlpha -= _fadeSpeed[IS.IN]
+			{
+				_fadeAlpha -= _fadeSpeed[IS.IN] // Increment
+				_fadeSpeed[IS.IN] += _fadeAccel[IS.IN] // Animation speed increase
+			}
 			else
 				_state2 ++
 			break;
