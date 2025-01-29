@@ -16,6 +16,8 @@ if instance_exists(obj_stController)
 		"OUT: "+string(obj_stController.animType[IS.OUT])+
 		"\nIN: "+string(obj_stController.animType[IS.IN])+
 		"\nSTATE = "+string(obj_stController._state)+
-		"\nSCREENSHOT = "+string(obj_stController._screenshotTaken)
+		"\nSCREENSHOT = "+string(obj_stController._screenshotTaken)+
+		"\nDELAY_0 = "+string(obj_stController._delay[0])+
+		"\nDELAY_1 = "+string(obj_stController._delay[1])
 	)
 }

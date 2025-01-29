@@ -25,6 +25,8 @@ function _stResetAllVariables()
 	_surfaceClear()
 	_drawEvent = DEFAULT_DRAWEVENT
 	_color = c_black
+	_delay[IS.OUT] = DEFAULT_DELAY_0
+	_delay[IS.IN]  = DEFAULT_DELAY_1
 	
 	// put variables for specific animations here
 	_stResetFadeVariables()

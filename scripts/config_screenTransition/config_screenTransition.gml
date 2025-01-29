@@ -22,7 +22,9 @@
 ////////////////////////////////////////////////////////////////////////////
 
 // General
-#macro DEFAULT_COLOR c_black	//default color for transitions which use a solid color
+#macro DEFAULT_COLOR    c_black //default color for transitions which use a solid color
+#macro DEFAULT_DELAY_0  100		//default delay before room changes
+#macro DEFAULT_DELAY_1  100		//default delay before in animation starts
 
 // Fade
 #macro DEFAULT_FADESPEED_0 .02 // speed of fade animation out

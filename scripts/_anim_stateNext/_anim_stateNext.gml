@@ -10,7 +10,12 @@ function _anim_stateNext()
 			_state ++
 		}
 		else
-			_screenshotDo = true // (Will delay room transition by one frame)
+		{
+			if _delay[IS.OUT] <= 0
+				_screenshotDo = true // (Will delay room transition by one frame)
+			else
+				_delay[IS.OUT] --
+		}
 	}
 	else //reset self, both animations are over
 		_stResetAllVariables()
