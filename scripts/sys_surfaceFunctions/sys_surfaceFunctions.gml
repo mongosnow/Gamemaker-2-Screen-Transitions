@@ -1,12 +1,14 @@
 //sprite_create_from_surface() <<USE THIS
 
-function _surfaceInitialize(width = DEFAULT_WIDTH, height = DEFAULT_HEIGHT) // put in create event
+function _surfaceInitialize(_x = DEFAULT_X, _y = DEFAULT_Y, width = DEFAULT_WIDTH, height = DEFAULT_HEIGHT)
 {
 	// Screenshot variables
 	_surface = -1 // Surface
 	spr_stSurface = -1 // Sprite
 	
 	// Size
+	_surfaceX = _x
+	_surfaceY = _y
 	_surfaceWidth = width
 	_surfaceHeight = height
 }
@@ -27,8 +29,8 @@ function _surfaceClear() // Put in clean up and create event
 
 function _surfaceTakeScreenshot() // put in post-draw event, run once
 {
-	var x1 = camera_get_view_x(view_camera[0])
-	var y1 = camera_get_view_y(view_camera[0])
+	var x1 = _surfaceX
+	var y1 = _surfaceY
 	var x2 = _surfaceWidth
 	var y2 = _surfaceHeight
 	

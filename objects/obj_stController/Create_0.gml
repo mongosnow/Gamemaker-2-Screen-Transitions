@@ -32,12 +32,6 @@ function _stResetAllVariables()
 
 _stResetAllVariables() //initialize variables
 
-enum DRAW
-{
-	NORMAL = 0,
-	GUI = 1,
-}
-
 _drawEvent = DEFAULT_DRAWEVENT
 
 function drawEvent() // This is the main drawing function, place all animations here
@@ -48,7 +42,11 @@ function drawEvent() // This is the main drawing function, place all animations 
 		switch(animType[_state])
 		{
 			case ST_FADE:
-			_stFade() 
+			_stFade(false) 
+			break;
+			
+			case ST_FADE_SCREENSHOT_IN:
+			_stFade(true)
 			break;
 		
 			default: //ST_NONE or undefined, etc.

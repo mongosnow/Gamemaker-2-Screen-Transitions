@@ -5,7 +5,7 @@
 
 // Fade //
 #macro ST_FADE "FADE_0"
-//ST_FADE_SURFACE_IN "FADE_1" //in only
+#macro ST_FADE_SCREENSHOT_IN "FADE_1" // Works for in only
 
 // Checkers //
 #macro ST_CHECKER_LEFT_TO_RIGHT "CHECK_LR_0"
