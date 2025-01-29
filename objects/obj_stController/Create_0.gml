@@ -22,6 +22,7 @@ function _stResetAllVariables()
 	_roomGoTo = undefined
 	
 	// general variables
+	_surfaceClear()
 	_drawEvent = DEFAULT_DRAWEVENT
 	_color = c_black
 	
