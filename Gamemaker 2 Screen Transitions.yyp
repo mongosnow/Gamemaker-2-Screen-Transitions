@@ -57,6 +57,7 @@
     {"id":{"name":"config_screenTransition","path":"scripts/config_screenTransition/config_screenTransition.yy",},},
     {"id":{"name":"list_screenTransitionTypes","path":"scripts/list_screenTransitionTypes/list_screenTransitionTypes.yy",},},
     {"id":{"name":"screenTransition_set_fade","path":"scripts/screenTransition_set_fade/screenTransition_set_fade.yy",},},
+    {"id":{"name":"screenTransition_set_size","path":"scripts/screenTransition_set_size/screenTransition_set_size.yy",},},
     {"id":{"name":"screenTransition","path":"scripts/screenTransition/screenTransition.yy",},},
     {"id":{"name":"sys_fade","path":"scripts/sys_fade/sys_fade.yy",},},
     {"id":{"name":"sys_none","path":"scripts/sys_none/sys_none.yy",},},

@@ -6,6 +6,6 @@ if keyboard_check_pressed(vk_numpad0)
 	
 	if room = rm
 		rm = rm_squares
-		
-	 screenTransition(rm, ST_FADE_SCREENSHOT_IN, ST_FADE_SCREENSHOT_IN)
+	
+	screenTransition(rm, ST_FADE, ST_FADE)
 }	

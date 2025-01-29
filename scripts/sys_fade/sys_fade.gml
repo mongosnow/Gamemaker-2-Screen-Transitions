@@ -66,7 +66,7 @@ function _stFade(useScreenshot = false)
 		if useScreenshot // Draw surface sprite
 		{
 			if sprite_exists(spr_stSurface)
-				draw_sprite_ext(spr_stSurface, 0, DEFAULT_X, DEFAULT_Y, 1, 1, 0 , c_white, _fadeAlpha)
+				draw_sprite_ext(spr_stSurface, 0, _stX, _stY, 1, 1, 0 , c_white, _fadeAlpha)
 		}
 		else
 			_anim_drawRectangle(_fadeAlpha) // Draw transparent rectangle
