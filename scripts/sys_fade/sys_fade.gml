@@ -80,7 +80,7 @@ function _stFade(useScreenshot = false, useSprite = false)
 			draw_sprite_ext(spr_stSurface, 0, DEFAULT_X, DEFAULT_Y, 1, 1, 0 , c_white, _fadeAlpha)
 	}
 	else if useSprite // Draw transparent sprite
-		draw_sprite_ext(_sprite, 0, DEFAULT_X, DEFAULT_Y, 1, 1, 0 , c_white, _fadeAlpha)
+		draw_sprite_ext(sprite_index, 0, DEFAULT_X, DEFAULT_Y, 1, 1, 0 , c_white, _fadeAlpha)
 	else
 		_anim_drawRectangle(_fadeAlpha) // Draw transparent rectangle
 		

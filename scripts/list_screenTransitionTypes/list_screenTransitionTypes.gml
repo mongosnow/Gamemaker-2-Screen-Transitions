@@ -5,12 +5,13 @@
 
 // Fade //
 #macro ST_FADE "FADE_0"
-#macro ST_FADE_SCREENSHOT_IN "FADE_1" // Works for in only
+#macro ST_FADE_SCREENSHOT_IN "FADE_1"
 #macro ST_FADE_SPRITE "FADE_2"
 
 // Scale //
 #macro ST_TRANSFORM "TRAN_0"
 
+/*
 // Checkers //
 #macro ST_CHECKER_LEFT_TO_RIGHT "CHECK_LR_0"
 #macro ST_CHECKER_RIGHT_TO_LEFT "CHECK_RL_0"

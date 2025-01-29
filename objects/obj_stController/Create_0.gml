@@ -26,6 +26,7 @@ function _stResetAllVariables()
 	_drawEvent = DEFAULT_DRAWEVENT
 	_color = c_black
 	_sprite = DEFAULT_SPRITE
+	sprite_index = DEFAULT_SPRITE
 	_delay[IS.OUT] = DEFAULT_DELAY_0
 	_delay[IS.IN]  = DEFAULT_DELAY_1
 	
