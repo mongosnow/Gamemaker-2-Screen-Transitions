@@ -7,6 +7,9 @@
 #macro ST_FADE "FADE_0"
 #macro ST_FADE_SCREENSHOT_IN "FADE_1" // Works for in only
 
+// Scale //
+#macro ST_TRANSFORM "TRAN_0"
+
 // Checkers //
 #macro ST_CHECKER_LEFT_TO_RIGHT "CHECK_LR_0"
 #macro ST_CHECKER_RIGHT_TO_LEFT "CHECK_RL_0"
@@ -15,6 +18,7 @@
 #macro ST_CHECKER_DIAGONAL_UP_LEFT_TO_DOWN_RIGHT "CHECK_ULDR_0"
 #macro ST_CHECKER_DIAGONAL_DOWN_RIGHT_TO_UP_LEFT "CHECK_DRUL_0"
 
+//REMOVE THIS \/\/\/\/\/\/
 // Variables for Checkers //
 #macro CHECKER_TRANSFORM_XSCALE 0 //will change x scale from center
 #macro CHECKER_TRANSFORM_YSCALE 1 //will change y scale from center

@@ -62,6 +62,7 @@
     {"id":{"name":"sys_fade","path":"scripts/sys_fade/sys_fade.yy",},},
     {"id":{"name":"sys_none","path":"scripts/sys_none/sys_none.yy",},},
     {"id":{"name":"sys_surfaceFunctions","path":"scripts/sys_surfaceFunctions/sys_surfaceFunctions.yy",},},
+    {"id":{"name":"sys_transform","path":"scripts/sys_transform/sys_transform.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",

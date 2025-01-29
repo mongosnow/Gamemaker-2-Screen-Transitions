@@ -28,6 +28,7 @@ function _stResetAllVariables()
 	
 	// put variables for specific animations here
 	_stResetFadeVariables()
+	_stResetTransformVariables()
 }
 
 _stResetAllVariables() //initialize variables
@@ -41,6 +42,7 @@ function drawEvent() // This is the main drawing function, place all animations 
 		// Do animations
 		switch(animType[_state])
 		{
+			#region Fade
 			case ST_FADE:
 			_stFade(false) 
 			break;
@@ -48,9 +50,16 @@ function drawEvent() // This is the main drawing function, place all animations 
 			case ST_FADE_SCREENSHOT_IN:
 			_stFade(true)
 			break;
+			#endregion
+			
+			#region Scale
+			case ST_TRANSFORM:
+			
+			break;
+			#endregion
 		
 			default: //ST_NONE or undefined, etc.
-			_stNone() 
+			_stNone()
 			break;
 		}
 	}
