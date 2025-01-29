@@ -5,7 +5,7 @@ function _stResetFadeVariables() //for variable reset function
 	_fadeAlpha = 0
 }
 
-function _stFade(useScreenshot = false)
+function _stFade(useScreenshot = false, useSprite = false)
 {
 	switch(_state)
 	{
@@ -37,8 +37,6 @@ function _stFade(useScreenshot = false)
 				_anim_stateNext()
 				break;
 			}
-			
-			_anim_drawRectangle(_fadeAlpha) // Draw transparent rectangle
 		}
 		
 		break;
@@ -69,16 +67,22 @@ function _stFade(useScreenshot = false)
 			_anim_stateNext()
 			break;
 		}
-		
-		if useScreenshot // Draw surface sprite
-		{
-			if sprite_exists(spr_stSurface)
-				draw_sprite_ext(spr_stSurface, 0, DEFAULT_X, DEFAULT_Y, 1, 1, 0 , c_white, _fadeAlpha)
-		}
-		else
-			_anim_drawRectangle(_fadeAlpha) // Draw transparent rectangle
-		
 		break;
+
 		#endregion
 	}
+	
+	#region Draw
+	
+	if useScreenshot // Draw surface sprite
+	{
+		if sprite_exists(spr_stSurface)
+			draw_sprite_ext(spr_stSurface, 0, DEFAULT_X, DEFAULT_Y, 1, 1, 0 , c_white, _fadeAlpha)
+	}
+	else if useSprite // Draw transparent sprite
+		draw_sprite_ext(_sprite, 0, DEFAULT_X, DEFAULT_Y, 1, 1, 0 , c_white, _fadeAlpha)
+	else
+		_anim_drawRectangle(_fadeAlpha) // Draw transparent rectangle
+		
+	#endregion
 }

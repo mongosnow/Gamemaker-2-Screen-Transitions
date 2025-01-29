@@ -25,6 +25,7 @@ function _stResetAllVariables()
 	_surfaceClear()
 	_drawEvent = DEFAULT_DRAWEVENT
 	_color = c_black
+	_sprite = DEFAULT_SPRITE
 	_delay[IS.OUT] = DEFAULT_DELAY_0
 	_delay[IS.IN]  = DEFAULT_DELAY_1
 	
@@ -51,6 +52,10 @@ function drawEvent() // This is the main drawing function, place all animations 
 			
 			case ST_FADE_SCREENSHOT_IN:
 			_stFade(true)
+			break;
+			
+			case ST_FADE_SPRITE:
+			_stFade(false, true)
 			break;
 			#endregion
 			

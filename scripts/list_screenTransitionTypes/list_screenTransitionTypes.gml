@@ -6,6 +6,7 @@
 // Fade //
 #macro ST_FADE "FADE_0"
 #macro ST_FADE_SCREENSHOT_IN "FADE_1" // Works for in only
+#macro ST_FADE_SPRITE "FADE_2"
 
 // Scale //
 #macro ST_TRANSFORM "TRAN_0"
