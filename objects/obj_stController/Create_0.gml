@@ -12,6 +12,7 @@ function _stResetAllVariables()
 	// state
 	_state = IS.NONE
 	_state2 = 0
+	_screenshotTaken = false
 	
 	animType[IS.OUT] = ST_NONE
 	animType[IS.IN] = ST_NONE
@@ -24,7 +25,6 @@ function _stResetAllVariables()
 	_color = c_black
 	
 	// put variables for specific animations here
-	
 	_stResetFadeVariables()
 }
 
@@ -42,10 +42,6 @@ function drawEvent() // This is the main drawing function, place all animations 
 {
 	if _state < 2 // If _state is out of in
 	{
-		// Change room after out animation finishes if _roomGoTo is set
-		if _state = IS.IN && _roomGoTo != undefined
-			_anim_roomChange()
-	
 		// Do animations
 		switch(animType[_state])
 		{

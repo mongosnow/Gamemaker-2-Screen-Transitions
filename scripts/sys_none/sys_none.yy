@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"sys_none",
   "parent":{
-    "name":"Animations",
-    "path":"folders/screenTransition/System/Drawing/Animations.yy",
+    "name":"Animations (Specific)",
+    "path":"folders/screenTransition/System (Don't call these)/Drawing/Animations (Specific).yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

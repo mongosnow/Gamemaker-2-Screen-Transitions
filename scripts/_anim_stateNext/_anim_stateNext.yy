@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"_anim_stateNext",
   "parent":{
-    "name":"Animation General Functions",
-    "path":"folders/screenTransition/System/Drawing/Animation General Functions.yy",
+    "name":"Animation (General Functions)",
+    "path":"folders/screenTransition/System (Don't call these)/Drawing/Animation (General Functions).yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
