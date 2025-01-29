@@ -1,6 +1,6 @@
 function _stResetFadeVariables() //for variable reset function
 {
-	_fadeSpeed = [DEFAULT_FADESPEED, DEFAULT_FADESPEED]
+	_fadeSpeed = [DEFAULT_FADESPEED_0, DEFAULT_FADESPEED_1]
 	_fadeAlpha = 0
 }
 

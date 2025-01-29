@@ -25,7 +25,8 @@
 #macro DEFAULT_COLOR c_black	//default color for transitions which use a solid color
 
 // Fade
-#macro DEFAULT_FADESPEED .02 //default speed of fade animation
+#macro DEFAULT_FADESPEED_0 .02 // speed of fade animation out
+#macro DEFAULT_FADESPEED_1 .02 // speed of fade animation in
 
 ////////////////////////////////////////////////////////////////////////////
 //								ADVANCED								  //
