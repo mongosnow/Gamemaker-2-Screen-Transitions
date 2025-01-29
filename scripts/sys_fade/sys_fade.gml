@@ -20,7 +20,7 @@ function _stFade(useScreenshot = false)
 			{
 				case 0: // Set alpha
 				_fadeAlpha = 0
-				_state2 ++
+				_anim_state2Next()
 				break;
 			
 				case 1: // Increase alpha until it's 1
@@ -30,7 +30,7 @@ function _stFade(useScreenshot = false)
 					_fadeSpeed[IS.OUT] += _fadeAccel[IS.OUT] // Animation speed increase
 				}
 				else
-					_state2 ++
+					_anim_state2Next()
 				break;
 			
 				case 2:
@@ -51,7 +51,7 @@ function _stFade(useScreenshot = false)
 		{
 			case 0: // Set alpha
 			_fadeAlpha = 1
-			_state2 ++
+			_anim_state2Next()
 			break;
 			
 			case 1: // Increase alpha until it's 0
@@ -61,7 +61,7 @@ function _stFade(useScreenshot = false)
 				_fadeSpeed[IS.IN] += _fadeAccel[IS.IN] // Animation speed increase
 			}
 			else
-				_state2 ++
+				_anim_state2Next()
 			break;
 			
 			case 2:

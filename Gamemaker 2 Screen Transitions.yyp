@@ -49,6 +49,7 @@
     {"id":{"name":"rm_leaves","path":"rooms/rm_leaves/rm_leaves.yy",},},
     {"id":{"name":"rm_squares","path":"rooms/rm_squares/rm_squares.yy",},},
     {"id":{"name":"_anim_drawRectangle","path":"scripts/_anim_drawRectangle/_anim_drawRectangle.yy",},},
+    {"id":{"name":"_anim_state2Next","path":"scripts/_anim_state2Next/_anim_state2Next.yy",},},
     {"id":{"name":"_anim_stateNext","path":"scripts/_anim_stateNext/_anim_stateNext.yy",},},
     {"id":{"name":"_lowestLayerDepthReturn","path":"scripts/_lowestLayerDepthReturn/_lowestLayerDepthReturn.yy",},},
     {"id":{"name":"_lowestObjectDepthReturn","path":"scripts/_lowestObjectDepthReturn/_lowestObjectDepthReturn.yy",},},
