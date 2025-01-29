@@ -15,6 +15,7 @@ if instance_exists(obj_stController)
 		20, 
 		"OUT: "+string(obj_stController.animType[IS.OUT])+
 		"\nIN: "+string(obj_stController.animType[IS.IN])+
-		"\nSTATE = "+string(obj_stController._state)
+		"\nSTATE = "+string(obj_stController._state)+
+		"\nSCREENSHOT = "+string(obj_stController._screenshotTaken)
 	)
 }

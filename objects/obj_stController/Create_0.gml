@@ -12,6 +12,7 @@ function _stResetAllVariables()
 	// state
 	_state = IS.NONE
 	_state2 = 0
+	_screenshotDo = false
 	_screenshotTaken = false
 	
 	animType[IS.OUT] = ST_NONE

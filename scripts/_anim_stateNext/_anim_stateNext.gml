@@ -9,6 +9,8 @@ function _anim_stateNext()
 			_state2 = 0
 			_state ++
 		}
+		else
+			_screenshotDo = true // (Will delay room transition by one frame)
 	}
 	else //reset self, both animations are over
 		_stResetAllVariables()
