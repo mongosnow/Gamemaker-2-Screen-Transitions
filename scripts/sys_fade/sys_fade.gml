@@ -4,31 +4,26 @@ function _stResetFadeVariables() //for variable reset function
 	_fadeAlpha = 0
 }
 
-//maybe move this \/\/\/\/\/
 function screenTransition_setFadeVariables(fadeSpeedIn = DEFAULT_FADESPEED, fadeSpeedOut = DEFAULT_FADESPEED)
 {
 	_fadeSpeed = [fadeSpeedIn, fadeSpeedOut]
 }
 
-function _stFade()
+function _stFade(useSurface = false)
 {
 	switch(_state)
 	{
 		#region OUT
 		case IS.OUT:
 		
-		switch(_state2)
+		switch(_state2) // Increment animation
 		{
-			case 0:
-			//draw fade rectangle
+			case 0: // Set alpha
 			_fadeAlpha = 0
-			_anim_coverScreen_SolidColor()
 			_state2 ++
 			break;
 			
-			case 1:
-			//check if fade out not completed
-			//fade out
+			case 1: // Increase alpha until it's 1
 			if _fadeAlpha < 1
 				_fadeAlpha += _fadeSpeed[IS.OUT]
 			else
@@ -36,10 +31,11 @@ function _stFade()
 			break;
 			
 			case 2:
-			//draw black rectangle
 			_anim_stateNext()
 			break;
 		}
+		
+		_anim_drawRectangle_color(_fadeAlpha) // Draw transparent rectangle
 		
 		break;
 		#endregion
@@ -47,20 +43,18 @@ function _stFade()
 		#region IN
 		case IS.IN:
 		
-		switch(_state2)
+		switch(_state2) // Increment animation
 		{
-			case 0:
-			//draw fade rectangle
-			//undraw black rectangle 
+			case 0: // Set alpha
 			_fadeAlpha = 1
 			_state2 ++
 			break;
 			
-			case 1:
-			//check if fade in not completed
-			//fade in
-			//else
-			_state2 ++
+			case 1: // Increase alpha until it's 0
+			if _fadeAlpha > 0
+				_fadeAlpha -= _fadeSpeed[IS.IN]
+			else
+				_state2 ++
 			break;
 			
 			case 2:
@@ -68,6 +62,8 @@ function _stFade()
 			_anim_stateNext()
 			break;
 		}
+		
+		_anim_drawRectangle_color(_fadeAlpha) // Draw transparent rectangle
 		
 		break;
 		#endregion

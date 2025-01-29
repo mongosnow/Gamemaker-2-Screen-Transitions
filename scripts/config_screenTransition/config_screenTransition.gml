@@ -10,6 +10,12 @@
 
 // Which draw event do animations run in by default
 #macro DEFAULT_DRAWEVENT 1 //1 = Draw GUI, 0 = Draw
+
+// Default area for screen transitions to take up
+//default starting point x, like 0 or something
+//default starting point y, like 0 or something
+#macro DEFAULT_WIDTH  camera_get_view_width(view_camera[0])
+#macro DEFAULT_HEIGHT camera_get_view_height(view_camera[0])
 					   
 ////////////////////////////////////////////////////////////////////////////
 //							ANIMATION DEFAULTS							  //

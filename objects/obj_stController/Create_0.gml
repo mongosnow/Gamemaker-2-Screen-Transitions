@@ -29,3 +29,33 @@ function _stResetAllVariables()
 }
 
 _stResetAllVariables() //initialize variables
+
+enum DRAW
+{
+	NORMAL = 0,
+	GUI = 1,
+}
+
+_drawEvent = DEFAULT_DRAWEVENT
+
+function drawEvent() // This is the main drawing function, place all animations here
+{
+	if _state < 2 // If _state is out of in
+	{
+		// Change room after out animation finishes if _roomGoTo is set
+		if _state = IS.IN && _roomGoTo != undefined
+			_anim_roomChange()
+	
+		// Do animations
+		switch(animType[_state])
+		{
+			case ST_FADE:
+			_stFade() 
+			break;
+		
+			default: //ST_NONE or undefined, etc.
+			_stNone() 
+			break;
+		}
+	}
+}
