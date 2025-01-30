@@ -7,5 +7,5 @@ if keyboard_check_pressed(vk_numpad0)
 	if room = rm
 		rm = rm_squares
 		
-	 screenTransition(rm, ST_FADE_SPRITE, ST_FADE_SPRITE)
+	 screenTransition(rm, ST_TSCALE_Y, ST_TSCALE_BOTH)
 }	

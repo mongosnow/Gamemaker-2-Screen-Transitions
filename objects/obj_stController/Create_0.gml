@@ -25,14 +25,15 @@ function _stResetAllVariables()
 	_surfaceClear()
 	_drawEvent = DEFAULT_DRAWEVENT
 	_color = c_black
-	_sprite = DEFAULT_SPRITE
+	if sprite_exists(DEFAULT_SPRITE)
+		_sprite = DEFAULT_SPRITE
 	sprite_index = DEFAULT_SPRITE
 	_delay[IS.OUT] = DEFAULT_DELAY_0
 	_delay[IS.IN]  = DEFAULT_DELAY_1
 	
 	// put variables for specific animations here
 	_stResetFadeVariables()
-	_stResetTransformVariables()
+	_stReset_stTransformScaleVariables()
 }
 
 _stResetAllVariables() //initialize variables
@@ -61,8 +62,16 @@ function drawEvent() // This is the main drawing function, place all animations 
 			#endregion
 			
 			#region Scale
-			case ST_TRANSFORM:
+			case ST_TSCALE_X:
+			_stTransformScale(0)
+			break;
 			
+			case ST_TSCALE_Y:
+			_stTransformScale(1)
+			break;
+			
+			case ST_TSCALE_BOTH:
+			_stTransformScale(2)
 			break;
 			#endregion
 		
