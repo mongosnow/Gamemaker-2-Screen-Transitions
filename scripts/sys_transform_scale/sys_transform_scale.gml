@@ -3,7 +3,17 @@ function _stReset_stTransformScaleVariables() //for variable reset function
 	_sizeX = 0
 	_sizeY = 0
 	
-	_tScaleTime = [DEFAULT_TSCALE_SPEED_0, DEFAULT_TSCALE_SPEED_1]
+	// Anim time
+	_tScaleSpeed = [DEFAULT_TSCALE_SPEED_0, DEFAULT_TSCALE_SPEED_1]
+	_tScaleAccel = [DEFAULT_TSCALE_ACCEL_0, DEFAULT_TSCALE_ACCEL_1]
+	
+	// Screen center
+	
+	var xLoc = DEFAULT_WIDTH / 2
+	var yLoc = DEFAULT_HEIGHT / 2
+	
+	_tScaleLocX = [DEFAULT_TSCALE_X_0, DEFAULT_TSCALE_X_1]
+	_tScaleLocY = [DEFAULT_TSCALE_Y_0, DEFAULT_TSCALE_Y_1]
 }
 
 //////////////  <---- whichScale
@@ -11,6 +21,15 @@ function _stReset_stTransformScaleVariables() //for variable reset function
 // 1 = Y	// 
 // 2 = BOTH //
 //////////////
+
+function _tScaleSpeedReturn(state) // Manage speed
+{
+	var unit = 1/_tScaleSpeed[state]
+		
+	_tScaleSpeed[state] += _tScaleAccel[state]
+		
+	return unit
+}
 
 function _stTransformScale(whichScale, useScreenshot = false, useSprite = false)
 {
@@ -51,18 +70,24 @@ function _stTransformScale(whichScale, useScreenshot = false, useSprite = false)
 				break;
 				
 				case 1:
+				var unit = _tScaleSpeedReturn(IS.OUT)
+				
 				if _sizeX < 1 // Increase x scale
-					_sizeX += 1/_tScaleTime[IS.OUT]
+					_sizeX += unit
 				else
 					_sizeX = 1
 				
 				if _sizeY < 1 // Increase y scale
-					_sizeY += 1/_tScaleTime[IS.OUT]
+					_sizeY += unit
 				else
 					_sizeY = 1
 					
 				if _sizeX >= 1 && _sizeY >= 1 // When both max size, proceed
-					_anim_stateNext()
+					_anim_state2Next()
+				break;
+				
+				case 2:
+				_anim_stateNext()
 				break;
 			}
 		}
@@ -84,10 +109,12 @@ function _stTransformScale(whichScale, useScreenshot = false, useSprite = false)
 			break;
 				
 			case 1:
+			var unit = _tScaleSpeedReturn(IS.IN)
+			
 			if whichScale = 0 || whichScale = 2 // X and Both
 			{
 				if _sizeX > 0 // Increase x scale
-					_sizeX -= 1/_tScaleTime[IS.IN]
+					_sizeX -= unit
 				else
 					_sizeX = 0
 			}
@@ -95,7 +122,7 @@ function _stTransformScale(whichScale, useScreenshot = false, useSprite = false)
 			if whichScale = 1 || whichScale = 2 // X and Both
 			{
 				if _sizeY > 0 // Increase y scale
-					_sizeY -= 1/_tScaleTime[IS.IN]
+					_sizeY -= unit
 				else
 					_sizeY = 0
 			}
@@ -122,37 +149,41 @@ function _stTransformScale(whichScale, useScreenshot = false, useSprite = false)
 	#endregion
 	
 	#region Draw
-		
-	var centerX	= DEFAULT_WIDTH  / 2
-	var centerY	= DEFAULT_HEIGHT / 2
-		
-	if useScreenshot // Draw surface sprite
+	if _state < 2
 	{
-		if sprite_exists(spr_stSurface)
+		var centerX	= _tScaleLocX[_state]
+		var centerY	= _tScaleLocY[_state]
+		
+		if useScreenshot // Draw surface sprite
 		{
-			sprite_set_offset(spr_stSurface, centerX, centerY)
-			draw_sprite_ext(spr_stSurface, 0, centerX, centerY, _sizeX, _sizeY, 0, c_white, _fadeAlpha)
-			sprite_set_offset(spr_stSurface, 0, 0)
+			if sprite_exists(spr_stSurface)
+			{
+				sprite_set_offset(spr_stSurface, centerX, centerY)
+				draw_sprite_ext(spr_stSurface, 0, centerX, centerY, _sizeX, _sizeY, 0, c_white, _fadeAlpha)
+				sprite_set_offset(spr_stSurface, 0, 0)
+			}
+		}
+		else if useSprite && sprite_exists(DEFAULT_SPRITE)
+		{
+			sprite_set_offset(DEFAULT_SPRITE, centerX, centerY)
+			draw_sprite_ext(DEFAULT_SPRITE, image_index, centerX, centerY, _sizeX, _sizeY, 0, c_white, _fadeAlpha)
+			sprite_set_offset(DEFAULT_SPRITE, 0, 0)
+		}
+		else // Draw rectangle
+		{
+			var areaLeft = _tScaleLocX[_state]
+			var areaRight = DEFAULT_WIDTH - _tScaleLocX[_state]
+			
+			var areaTop = _tScaleLocY[_state]
+			var areaBottom = DEFAULT_HEIGHT - _tScaleLocY[_state]
+		
+			var x1 = centerX - (areaLeft * _sizeX)	// left
+			var x2 = centerX + (areaRight * _sizeX)		// right
+			var y1 = centerY - (areaTop * _sizeX)		// top
+			var y2 = centerY + (areaTop * _sizeX)		// bottom
+		
+			_anim_drawRectangle(1, x1, y1, x2, y2)
 		}
 	}
-	else if useSprite && sprite_exists(DEFAULT_SPRITE)
-	{
-		sprite_set_offset(DEFAULT_SPRITE, centerX, centerY)
-		draw_sprite_ext(DEFAULT_SPRITE, image_index, centerX, centerY, _sizeX, _sizeY, 0, c_white, _fadeAlpha)
-		sprite_set_offset(DEFAULT_SPRITE, 0, 0)
-	}
-	else // Draw rectangle
-	{
-		var sizeXCut = (_sizeX * DEFAULT_WIDTH)  / 2
-		var sizeYCut = (_sizeY * DEFAULT_HEIGHT) / 2
-		
-		var x1 = centerX - sizeXCut // left
-		var x2 = centerX + sizeXCut	// right
-		var y1 = centerY - sizeYCut	// top
-		var y2 = centerY + sizeYCut	// bottom
-		
-		_anim_drawRectangle(1, x1, y1, x2, y2)
-	}
-		
 	#endregion
 }

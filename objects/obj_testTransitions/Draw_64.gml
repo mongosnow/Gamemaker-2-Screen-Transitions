@@ -18,6 +18,8 @@ if instance_exists(obj_stController)
 		"\nSTATE = "+string(obj_stController._state)+
 		"\nSCREENSHOT = "+string(obj_stController._screenshotTaken)+
 		"\nDELAY_0 = "+string(obj_stController._delay[0])+
-		"\nDELAY_1 = "+string(obj_stController._delay[1])
+		"\nDELAY_1 = "+string(obj_stController._delay[1])+
+		"\nTSPD_0 = "+string(obj_stController._tScaleSpeed[0])+
+		"\nTSPD_1 = "+string(obj_stController._tScaleSpeed[1])
 	)
 }
