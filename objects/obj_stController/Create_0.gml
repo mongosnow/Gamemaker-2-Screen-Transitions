@@ -9,7 +9,7 @@ enum IS
 
 function _stResetAllVariables()
 {
-	// state
+	// State //
 	_state = IS.NONE
 	_state2 = 0
 	_screenshotDo = false
@@ -21,17 +21,23 @@ function _stResetAllVariables()
 	
 	_roomGoTo = undefined
 	
-	// general variables
+	// General variables //
+	
 	_surfaceClear()
+	
 	_drawEvent = DEFAULT_DRAWEVENT
 	_color = c_black
-	if sprite_exists(DEFAULT_SPRITE)
-		_sprite = DEFAULT_SPRITE
-	sprite_index = DEFAULT_SPRITE
 	_delay[IS.OUT] = DEFAULT_DELAY_0
 	_delay[IS.IN]  = DEFAULT_DELAY_1
 	
-	// put variables for specific animations here
+	if sprite_exists(DEFAULT_SPRITE)
+	{
+		_sprite = DEFAULT_SPRITE
+		sprite_index = DEFAULT_SPRITE
+	}
+	
+	// (Put variables for specific animations here) //
+	
 	_stResetFadeVariables()
 	_stReset_stTransformScaleVariables()
 }
@@ -66,13 +72,42 @@ function drawEvent() // This is the main drawing function, place all animations 
 			_stTransformScale(0)
 			break;
 			
+			case ST_TSCALE_X_SREENSHOT_IN:
+			_stTransformScale(0, true)
+			break;
+			
+			case ST_TSCALE_X_SPRITE:
+			_stTransformScale(0, false, true)
+			break;
+			
 			case ST_TSCALE_Y:
 			_stTransformScale(1)
+			break;
+			
+			case ST_TSCALE_Y_SCREENSHOT_IN:
+			_stTransformScale(1, true)
+			break;
+			
+			case ST_TSCALE_Y_SPRITE:
+			_stTransformScale(1, false, true)
 			break;
 			
 			case ST_TSCALE_BOTH:
 			_stTransformScale(2)
 			break;
+			
+			case ST_TSCALE_BOTH_SCREENSHOT_IN:
+			_stTransformScale(2, true)
+			break;
+			
+			case ST_TSCALE_BOTH_SPRITE:
+			_stTransformScale(2, false, true)
+			break;
+			#endregion
+			
+			#region Checkers
+			
+			
 			#endregion
 		
 			default: //ST_NONE or undefined, etc.
