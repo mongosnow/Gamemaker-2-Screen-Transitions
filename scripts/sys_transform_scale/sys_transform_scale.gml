@@ -138,7 +138,7 @@ function _stTransformScale(whichScale, useScreenshot = false, useSprite = false)
 	else if useSprite && sprite_exists(DEFAULT_SPRITE)
 	{
 		sprite_set_offset(DEFAULT_SPRITE, centerX, centerY)
-		draw_sprite_ext(DEFAULT_SPRITE, 0, centerX, centerY, _sizeX, _sizeY, 0, c_white, _fadeAlpha)
+		draw_sprite_ext(DEFAULT_SPRITE, image_index, centerX, centerY, _sizeX, _sizeY, 0, c_white, _fadeAlpha)
 		sprite_set_offset(DEFAULT_SPRITE, 0, 0)
 	}
 	else // Draw rectangle
