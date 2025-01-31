@@ -79,7 +79,7 @@ function _stFade(useScreenshot = false, useSprite = false)
 		if sprite_exists(spr_stSurface)
 			draw_sprite_ext(spr_stSurface, 0, DEFAULT_X, DEFAULT_Y, 1, 1, 0 , c_white, _fadeAlpha)
 	}
-	else if useSprite && sprite_exists(DEFAULT_SPRITE) // Draw transparent sprite
+	else if useSprite && sprite_exists(_sprite) // Draw transparent sprite
 		draw_sprite_ext(sprite_index, 0, DEFAULT_X, DEFAULT_Y, 1, 1, 0 , c_white, _fadeAlpha)
 	else
 		_anim_drawRectangle(_fadeAlpha) // Draw transparent rectangle

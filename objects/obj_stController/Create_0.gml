@@ -35,6 +35,8 @@ function _stResetAllVariables()
 		_sprite = DEFAULT_SPRITE
 		sprite_index = DEFAULT_SPRITE
 	}
+	else
+		_sprite = -1
 	
 	// (Put variables for specific animations here) //
 	

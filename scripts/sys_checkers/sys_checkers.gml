@@ -245,23 +245,32 @@ function _stCheckers(chk_pattern, chk_transform, useScreenshot = false, useSprit
 	var y1 = 0
 	var y2 = 0
 	
-	for (var row = 0; row < _checkerAmountRow; row ++)
+	if useScreenshot = true
+	
+	else if useSprite = true && sprite_exists(_sprite)
 	{
-		for (var column = 0; column < _checkerAmountColumn; column ++)
+		
+	}
+	else
+	{
+		for (var row = 0; row < _checkerAmountRow; row ++)
 		{
-			sizeX = (_checkerMaxSize * _chk_sizeX[row][column]) / 2
-			sizeY = (_checkerMaxSize * _chk_sizeY[row][column]) / 2
+			for (var column = 0; column < _checkerAmountColumn; column ++)
+			{
+				sizeX = (_checkerMaxSize * _chk_sizeX[row][column]) / 2
+				sizeY = (_checkerMaxSize * _chk_sizeY[row][column]) / 2
 			
-			_x = (row * _checkerMaxSize) + centerPoint
-			_y = (column * _checkerMaxSize) + centerPoint
+				_x = (row * _checkerMaxSize) + centerPoint
+				_y = (column * _checkerMaxSize) + centerPoint
 			
-			x1 = _x - sizeX
-			x2 = _x + sizeX
-			y1 = _y - sizeY
-			y2 = _y + sizeY
+				x1 = _x - sizeX
+				x2 = _x + sizeX
+				y1 = _y - sizeY
+				y2 = _y + sizeY
 			
-			if sizeX > 0 && sizeY > 1
-				_anim_drawRectangle(1, x1, y1, x2, y2)
+				if sizeX > 0 && sizeY > 1
+					_anim_drawRectangle(1, x1, y1, x2, y2)
+			}
 		}
 	}
 	#endregion

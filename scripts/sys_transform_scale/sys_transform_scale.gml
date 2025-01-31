@@ -190,12 +190,12 @@ function _stTransformScale(whichScale, useScreenshot = false, useSprite = false)
 				sprite_set_offset(spr_stSurface, 0, 0) // Reset offset
 			}
 		}
-		else if useSprite && sprite_exists(DEFAULT_SPRITE) // Draw set sprite
+		else if useSprite && sprite_exists(_sprite) // Draw set sprite
 		{
-			sprite_set_offset(DEFAULT_SPRITE, centerX, centerY)
+			sprite_set_offset(_sprite, centerX, centerY)
 			if _tScaleSizeX > 0 && _tScaleSizeY > 0
-				draw_sprite_ext(DEFAULT_SPRITE, image_index, centerX, centerY, _tScaleSizeX, _tScaleSizeY, rotate, c_white, alpha)
-			sprite_set_offset(DEFAULT_SPRITE, 0, 0)
+				draw_sprite_ext(_sprite, image_index, centerX, centerY, _tScaleSizeX, _tScaleSizeY, rotate, c_white, alpha)
+			sprite_set_offset(_sprite, 0, 0)
 		}
 		else // Draw rectangle
 		{
