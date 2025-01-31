@@ -24,17 +24,17 @@
 
 // Fade //
 
-#macro DEFAULT_FADESPEED_0 .02			// speed of fade animation out
-#macro DEFAULT_FADESPEED_1 .02			// speed of fade animation in
-#macro DEFAULT_FADEACCEL_0 0			// How much animation speed will increase by over time - Out
-#macro DEFAULT_FADEACCEL_1 0			// In
+#macro DEFAULT_FADE_SPEED_0 .02			// speed of fade animation out
+#macro DEFAULT_FADE_SPEED_1 .02			// speed of fade animation in
+#macro DEFAULT_FADE_ACCEL_0 0			// How much animation speed will increase by over time - Out
+#macro DEFAULT_FADE_ACCEL_1 0			// In
 
 // Transform scale //
 
 #macro DEFAULT_TSCALE_SPEED_0 .1			// Start speed of animation out | higher = faster | >=1 does nothing
 #macro DEFAULT_TSCALE_ACCEL_0 -.001			// Amount animation speed changes by each frame out | negative speeds it up, positive slows it down
 #macro DEFAULT_TSCALE_SPEED_1 .1			// In	
-#macro DEFAULT_TSCALE_ACCEL_1 -.001				// In
+#macro DEFAULT_TSCALE_ACCEL_1 -.001			// In
 
 #macro DEFAULT_TSCALE_X_0 (DEFAULT_WIDTH / 2)	// Middle of animation, X, Out
 #macro DEFAULT_TSCALE_Y_0 (DEFAULT_HEIGHT / 2)	// Middle of animation, Y, Out

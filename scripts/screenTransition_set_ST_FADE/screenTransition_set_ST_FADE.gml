@@ -1,9 +1,9 @@
 function screenTransition_set_ST_FADE // Use this AFTER screenTransition to set specific variables
 (
-	fadeSpeedOut = DEFAULT_FADESPEED_0,  // Speed alpha will change by on out animation
-	fadeAccelOut = DEFAULT_FADEACCEL_0,	 // Speed alpha change will speed up by
-	fadeSpeedIn  = DEFAULT_FADESPEED_1,
-	fadeAccelIn  = DEFAULT_FADEACCEL_1
+	fadeSpeedOut = DEFAULT_FADE_SPEED_0,  // Speed alpha will change by on out animation
+	fadeAccelOut = DEFAULT_FADE_ACCEL_0,	 // Speed alpha change will speed up by
+	fadeSpeedIn  = DEFAULT_FADE_SPEED_1,
+	fadeAccelIn  = DEFAULT_FADE_ACCEL_1
 )
 {
 	with (obj_stController)
