@@ -12,7 +12,6 @@ function _stResetCheckersVariables() //for variable reset function
 	
 	// Checker amount
 	_checkerArraySet = false // To prevent looping upon delay during in aniamtion
-	_stResetCheckersArray(-1)
 }
 
 function _stResetCheckersArray(outOrIn = undefined)
@@ -50,20 +49,41 @@ function _stResetCheckersArray(outOrIn = undefined)
 		// Ammount of checkers in each row and column
 		_checkerAmountRow	 = ceil(_checkerMaxSize / DEFAULT_WIDTH)
 		_checkerAmountColumn = ceil(_checkerMaxSize / DEFAULT_HEIGHT)
-	
 		_checkerAmountTotal	 = _checkerAmountRow + _checkerAmountColumn
-	
+		
+		var isLast = function(arg0, arg1) // Return true if final entry in array
+		{
+			if arg0 + arg1 = _checkerAmountTotal - 2
+				return true
+			else
+				return false
+		}
+		
 		// Checker size management arrays
 		for (var row = 0; row < _checkerAmountRow; row += 1)
 		{
 		    for (var column = 0; column < _checkerAmountColumn; column += 1)
 			{
+				// X scale
 				_chk_sizeX[row][column] = sizeX
-				_chk_sizeY[row][column] = sizeY
-				_chk_delayTimer[row][column] = 0 // For checking timer
-	
-				array_resize(_chk_sizeX, _checkerAmountRow)
-				array_resize(_chk_sizeX[row], _checkerAmountColumn)
+				if isLast(row, column){
+					array_resize(_chk_sizeX, _checkerAmountRow)
+					array_resize(_chk_sizeX[row], _checkerAmountColumn)
+				}
+				
+				// Y scale
+				_chk_sizeY[row][column] = sizeY 
+				if isLast(row, column){
+					array_resize(_chk_sizeY, _checkerAmountRow)
+					array_resize(_chk_sizeY[row], _checkerAmountColumn)
+				}
+				
+				// Delay timer reset
+				_chk_delayTimer[row][column] = 0
+				if isLast(row, column){
+					array_resize(_chk_delayTimer, _checkerAmountRow)
+					array_resize(_chk_delayTimer[row], _checkerAmountColumn)
+				}
 			}
 		}
 	}

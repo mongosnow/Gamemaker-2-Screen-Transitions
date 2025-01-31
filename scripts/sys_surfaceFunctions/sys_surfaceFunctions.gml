@@ -2,14 +2,14 @@
 
 function _surfaceClear() // Put in clean up and create event
 {
-	var _surfaceInitialize = function() // Screenshot variables
+	var initialize = function() // Screenshot variables
 	{
 		_surface = -1 // Surface
 		spr_stSurface = -1 // Sprite
 	}
 	
 	if !variable_instance_exists(id, "_surface") // Initialize variables on first run
-		_surfaceInitialize()
+		initialize()
 	
 	// Clear sprite and surface from memory if they exist
 	
@@ -19,7 +19,7 @@ function _surfaceClear() // Put in clean up and create event
 	if sprite_exists(spr_stSurface)
 		sprite_delete(spr_stSurface)
 	
-	_surfaceInitialize() // Reset variables
+	initialize() // Reset variables
 }
 
 function _surfaceTakeScreenshot() // put in post-draw event, run once
