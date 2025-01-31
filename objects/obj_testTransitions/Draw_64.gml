@@ -19,7 +19,14 @@ if instance_exists(obj_stController)
 		"\nSCREENSHOT = "+string(obj_stController._screenshotTaken)+
 		"\nDELAY_0 = "+string(obj_stController._delay[0])+
 		"\nDELAY_1 = "+string(obj_stController._delay[1])+
-		"\nTSPD_0 = "+string(obj_stController._tScaleSpeed[0])+
-		"\nTSPD_1 = "+string(obj_stController._tScaleSpeed[1])
+		"\nROWS = "+string(obj_stController._checkerAmountRow)+
+		"\nROW ARRAY = "+string(array_length(obj_stController._checkerTransformDelayTimer))+
+		"\n0,0 SIZE = "+string(obj_stController._chk_sizeX[14][0])+
+		"\nTRANSFORMTYPE = "+string(obj_stController._checkerScaleTransform)+
+		"\nPATTERN = "+string(obj_stController._checkerPattern)+
+		"\nENDTIME = "+string(obj_stController._checkerEndTimer)
+		
+		
+		
 	)
 }

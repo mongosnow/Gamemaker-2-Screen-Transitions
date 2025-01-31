@@ -26,7 +26,7 @@ function _stResetAllVariables()
 	_surfaceClear()
 	
 	_drawEvent = DEFAULT_DRAWEVENT
-	_color = c_black
+	_color = DEFAULT_COLOR
 	_delay[IS.OUT] = DEFAULT_DELAY_0
 	_delay[IS.IN]  = DEFAULT_DELAY_1
 	
@@ -107,8 +107,9 @@ function drawEvent() // This is the main drawing function, place all animations 
 			#endregion
 			
 			#region Checkers
-			
-			
+			case ST_CHECKER_LEFT_TO_RIGHT:
+			_stCheckers(CHK_PATTERN.LEFT_RIGHT)
+			break;
 			#endregion
 		
 			default: //ST_NONE or undefined, etc.

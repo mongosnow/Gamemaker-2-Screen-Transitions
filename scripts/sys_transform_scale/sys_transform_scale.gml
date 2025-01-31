@@ -185,14 +185,16 @@ function _stTransformScale(whichScale, useScreenshot = false, useSprite = false)
 			if sprite_exists(spr_stSurface)
 			{
 				sprite_set_offset(spr_stSurface, centerX, centerY) // Set the offset to the specified center
-				draw_sprite_ext(spr_stSurface, 0, centerX, centerY, _tScaleSizeX, _tScaleSizeY, rotate, c_white, alpha) // Draw sprite
+				if _tScaleSizeX > 0 && _tScaleSizeY > 0
+					draw_sprite_ext(spr_stSurface, 0, centerX, centerY, _tScaleSizeX, _tScaleSizeY, rotate, c_white, alpha) // Draw sprite
 				sprite_set_offset(spr_stSurface, 0, 0) // Reset offset
 			}
 		}
 		else if useSprite && sprite_exists(DEFAULT_SPRITE) // Draw set sprite
 		{
 			sprite_set_offset(DEFAULT_SPRITE, centerX, centerY)
-			draw_sprite_ext(DEFAULT_SPRITE, image_index, centerX, centerY, _tScaleSizeX, _tScaleSizeY, rotate, c_white, alpha)
+			if _tScaleSizeX > 0 && _tScaleSizeY > 0
+				draw_sprite_ext(DEFAULT_SPRITE, image_index, centerX, centerY, _tScaleSizeX, _tScaleSizeY, rotate, c_white, alpha)
 			sprite_set_offset(DEFAULT_SPRITE, 0, 0)
 		}
 		else // Draw rectangle
@@ -208,7 +210,8 @@ function _stTransformScale(whichScale, useScreenshot = false, useSprite = false)
 			var y1 = centerY - (areaTop   * _tScaleSizeY)		// top height
 			var y2 = centerY + (areaTop   * _tScaleSizeY)		// bottom height
 			
-			_anim_drawRectangle(alpha, x1, y1, x2, y2)
+			if _tScaleSizeX > 0 && _tScaleSizeY > 0
+				_anim_drawRectangle(alpha, x1, y1, x2, y2)
 		}
 	}
 	#endregion
