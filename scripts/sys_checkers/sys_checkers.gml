@@ -40,10 +40,10 @@ function _stResetCheckersVariables() //for variable reset function
 	_stCheckers_state2_setArrays(true)
 	
 	// Extra animation variables
-	_checkerFadeSquare = [false, false]
-	_checkerDarkenBackground = [true, true]
-	_checkerDarkenBackgroundMaxAlpha = .65
-	_checkerDarkenColor = c_black
+	_checkerFadeSquare = [DEFAULT_CHECKER_FADE_SQUARE, DEFAULT_CHECKER_FADE_SQUARE]
+	_checkerDarkenBackground = [DEFAULT_CHECKER_FADE_BG, DEFAULT_CHECKER_FADE_BG]
+	_checkerDarkenBackgroundMaxAlpha = DEFAULT_CHECKER_MAX_BG_ALPHA
+	_checkerDarkenColor = DEFAULT_CHECKER_BG_COLOR
 	_checkerRotateSpd = [0, 0] // idk how to implement
 }
 

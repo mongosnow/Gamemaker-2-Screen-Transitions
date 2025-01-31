@@ -60,6 +60,7 @@
     {"id":{"name":"screenTransition_set_color","path":"scripts/screenTransition_set_color/screenTransition_set_color.yy",},},
     {"id":{"name":"screenTransition_set_delay","path":"scripts/screenTransition_set_delay/screenTransition_set_delay.yy",},},
     {"id":{"name":"screenTransition_set_sprite","path":"scripts/screenTransition_set_sprite/screenTransition_set_sprite.yy",},},
+    {"id":{"name":"screenTransition_set_ST_CHECKER","path":"scripts/screenTransition_set_ST_CHECKER/screenTransition_set_ST_CHECKER.yy",},},
     {"id":{"name":"screenTransition_set_ST_FADE","path":"scripts/screenTransition_set_ST_FADE/screenTransition_set_ST_FADE.yy",},},
     {"id":{"name":"screenTransition_set_ST_TSCALE","path":"scripts/screenTransition_set_ST_TSCALE/screenTransition_set_ST_TSCALE.yy",},},
     {"id":{"name":"screenTransition","path":"scripts/screenTransition/screenTransition.yy",},},

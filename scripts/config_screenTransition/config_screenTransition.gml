@@ -49,9 +49,14 @@
 
 // Checkers //
 
-#macro DEFAULT_CHECKER_SIZE 64			// Max size of squares, should be divisible by both width and height of transition area or else it will be rounded to nearest
-#macro DEFAULT_CHECKER_SPEED .25 		// Speed of checker scale change per frame | higher = faster | anything above 1 does nothing | 1 is instant
-#macro DEFAULT_CHECKER_DELAY 3			// Frames between checker groups animating
+#macro DEFAULT_CHECKER_SIZE 64				// Max size of squares, should be divisible by both width and height of transition area or else it will be rounded to nearest
+#macro DEFAULT_CHECKER_SPEED .25 			// Speed of checker scale change per frame | higher = faster | anything above 1 does nothing | 1 is instant
+#macro DEFAULT_CHECKER_DELAY 3				// Frames between checker groups animating
+#macro DEFAULT_CHECKER_FADE_SQUARE false	// Will the square change opacity during the animation?
+#macro DEFAULT_CHECKER_FADE_BG true			// Will the background fade to a color during the animation?
+#macro DEFAULT_CHECKER_MAX_BG_ALPHA .65		// The max opacity the background will become
+#macro DEFAULT_CHECKER_BG_COLOR c_black		// Color of background
+
 
 ////////////////////////////////////////////////////////////////////////////
 //								ADVANCED								  //
