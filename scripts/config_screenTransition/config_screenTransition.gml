@@ -20,7 +20,9 @@
 /////////////
 
 #macro DEFAULT_COLOR    c_black			//default color for transitions which use a solid color
+
 #macro DEFAULT_SPRITE	spr_sprite		//default sprite for transitions which use a sprite
+
 #macro DEFAULT_DELAY_0  0				//default delay before room changes and after out animation ends
 #macro DEFAULT_DELAY_1  0				//default delay before in animation starts after room changes
 
@@ -28,16 +30,19 @@
 // Fade //
 //////////
 
-#macro DEFAULT_FADE_SPEED_0 .02						// speed of fade animation out
-#macro DEFAULT_FADE_ACCEL_0 0						// How much animation speed will increase by over time - Out
+// Out //
+#macro DEFAULT_FADE_SPEED_0 .02		// speed of fade animation out
+#macro DEFAULT_FADE_ACCEL_0 0		// How much animation speed will increase by over time - Out
 
-#macro DEFAULT_FADE_SPEED_1 DEFAULT_FADE_SPEED_0	// (In)
-#macro DEFAULT_FADE_ACCEL_1 DEFAULT_FADE_ACCEL_0	//
+// In //
+#macro DEFAULT_FADE_SPEED_1 DEFAULT_FADE_SPEED_0
+#macro DEFAULT_FADE_ACCEL_1 DEFAULT_FADE_ACCEL_0
 
 /////////////////////
 // Transform scale //
 /////////////////////
 
+// Out //
 #macro DEFAULT_TSCALE_SPEED_0  .1						// Start speed of animation out | higher = faster | >=1 does nothing
 #macro DEFAULT_TSCALE_ACCEL_0  -.001					// Amount animation speed changes by each frame out | negative speeds it up, positive slows it down
 #macro DEFAULT_TSCALE_X_0	   (DEFAULT_WIDTH / 2)		// Middle of animation, X, Out
@@ -45,17 +50,19 @@
 #macro DEFAULT_TSCALE_FADE_0   true						// Will it change transparency?
 #macro DEFAULT_TSCALE_ROTSPD_0 0						// Speed multiplier for rotate animation - Should be whole number - Out
 
-#macro DEFAULT_TSCALE_SPEED_1  DEFAULT_TSCALE_SPEED_0	// (In)
-#macro DEFAULT_TSCALE_ACCEL_1  DEFAULT_TSCALE_ACCEL_0	// 
-#macro DEFAULT_TSCALE_X_1	   DEFAULT_TSCALE_X_0		// 
-#macro DEFAULT_TSCALE_Y_1	   DEFAULT_TSCALE_Y_0		// 
-#macro DEFAULT_TSCALE_FADE_1   DEFAULT_TSCALE_FADE_0	// 
-#macro DEFAULT_TSCALE_ROTSPD_1 DEFAULT_TSCALE_ROTSPD_0	// 
+// In //
+#macro DEFAULT_TSCALE_SPEED_1  DEFAULT_TSCALE_SPEED_0	
+#macro DEFAULT_TSCALE_ACCEL_1  DEFAULT_TSCALE_ACCEL_0	
+#macro DEFAULT_TSCALE_X_1	   DEFAULT_TSCALE_X_0	
+#macro DEFAULT_TSCALE_Y_1	   DEFAULT_TSCALE_Y_0	
+#macro DEFAULT_TSCALE_FADE_1   DEFAULT_TSCALE_FADE_0
+#macro DEFAULT_TSCALE_ROTSPD_1 DEFAULT_TSCALE_ROTSPD_0
 
 //////////////
 // Checkers //
 //////////////
 
+// Out //
 #macro DEFAULT_CHECKER_SIZE			  64		// Max size of squares, should be divisible by both width and height of transition area or else it will be rounded to nearest
 #macro DEFAULT_CHECKER_SPEED_0		  .25 		// Speed of checker scale change per frame | higher = faster | anything above 1 does nothing | 1 is instant
 #macro DEFAULT_CHECKER_DELAY_0		  3			// Frames between checker groups animating
@@ -64,11 +71,12 @@
 #macro DEFAULT_CHECKER_MAX_BG_ALPHA_0 .65		// The max opacity the background will become
 #macro DEFAULT_CHECKER_BG_COLOR		  c_black	// Color of background ^
 
-#macro DEFAULT_CHECKER_SPEED_1		  DEFAULT_CHECKER_SPEED_0 			// (In)
-#macro DEFAULT_CHECKER_DELAY_1		  DEFAULT_CHECKER_DELAY_0			// 
-#macro DEFAULT_CHECKER_FADE_SQUARE_1  DEFAULT_CHECKER_FADE_SQUARE_0		// 
-#macro DEFAULT_CHECKER_FADE_BG_1	  DEFAULT_CHECKER_FADE_BG_0			// 
-#macro DEFAULT_CHECKER_MAX_BG_ALPHA_1 DEFAULT_CHECKER_MAX_BG_ALPHA_0	// 
+// In //
+#macro DEFAULT_CHECKER_SPEED_1		  DEFAULT_CHECKER_SPEED_0 	
+#macro DEFAULT_CHECKER_DELAY_1		  DEFAULT_CHECKER_DELAY_0		
+#macro DEFAULT_CHECKER_FADE_SQUARE_1  DEFAULT_CHECKER_FADE_SQUARE_0
+#macro DEFAULT_CHECKER_FADE_BG_1	  DEFAULT_CHECKER_FADE_BG_0		
+#macro DEFAULT_CHECKER_MAX_BG_ALPHA_1 DEFAULT_CHECKER_MAX_BG_ALPHA_0
 
 ////////////////////////////////////////////////////////////////////////////
 //								ADVANCED								  //
