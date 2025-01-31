@@ -180,38 +180,38 @@ function _stTransformScale(whichScale, useScreenshot = false, useSprite = false)
 		
 		var rotate = 360 * _tScaleRotateSpd[_state] * rotateCheckScale
 		
-		if useScreenshot // Draw surface sprite
+		if _tScaleSizeX > 0 && _tScaleSizeY > 0
 		{
-			if sprite_exists(spr_stSurface)
+			if useScreenshot // Draw surface sprite
 			{
-				sprite_set_offset(spr_stSurface, centerX, centerY) // Set the offset to the specified center
-				if _tScaleSizeX > 0 && _tScaleSizeY > 0
+				if sprite_exists(spr_stSurface)
+				{
+					sprite_set_offset(spr_stSurface, centerX, centerY) // Set the offset to the specified center
 					draw_sprite_ext(spr_stSurface, 0, centerX, centerY, _tScaleSizeX, _tScaleSizeY, rotate, c_white, alpha) // Draw sprite
-				sprite_set_offset(spr_stSurface, 0, 0) // Reset offset
+					sprite_set_offset(spr_stSurface, 0, 0) // Reset offset
+				}
 			}
-		}
-		else if useSprite && sprite_exists(_sprite) // Draw set sprite
-		{
-			sprite_set_offset(_sprite, centerX, centerY)
-			if _tScaleSizeX > 0 && _tScaleSizeY > 0
+			else if useSprite && sprite_exists(_sprite) // Draw set sprite
+			{
+				sprite_set_offset(_sprite, centerX, centerY)
 				draw_sprite_ext(_sprite, image_index, centerX, centerY, _tScaleSizeX, _tScaleSizeY, rotate, c_white, alpha)
-			sprite_set_offset(_sprite, 0, 0)
-		}
-		else // Draw rectangle
-		{
-			var areaLeft = _tScaleLocX[_state] // Area of space to left of x origin
-			var areaRight = DEFAULT_WIDTH - _tScaleLocX[_state] // Area of space right of x origin
+				sprite_set_offset(_sprite, 0, 0)
+			}
+			else // Draw rectangle
+			{
+				var areaLeft = _tScaleLocX[_state] // Area of space to left of x origin
+				var areaRight = DEFAULT_WIDTH - _tScaleLocX[_state] // Area of space right of x origin
 			
-			var areaTop = _tScaleLocY[_state] // Area of the space above y origin
-			var areaBottom = DEFAULT_HEIGHT - _tScaleLocY[_state] // Area of the space below y origin
+				var areaTop = _tScaleLocY[_state] // Area of the space above y origin
+				var areaBottom = DEFAULT_HEIGHT - _tScaleLocY[_state] // Area of the space below y origin
 		
-			var x1 = centerX - (areaLeft  * _tScaleSizeX)		// left width
-			var x2 = centerX + (areaRight * _tScaleSizeX)		// right width
-			var y1 = centerY - (areaTop   * _tScaleSizeY)		// top height
-			var y2 = centerY + (areaTop   * _tScaleSizeY)		// bottom height
+				var x1 = centerX - (areaLeft  * _tScaleSizeX)		// left width
+				var x2 = centerX + (areaRight * _tScaleSizeX)		// right width
+				var y1 = centerY - (areaTop   * _tScaleSizeY)		// top height
+				var y2 = centerY + (areaTop   * _tScaleSizeY)		// bottom height
 			
-			if _tScaleSizeX > 0 && _tScaleSizeY > 0
 				_anim_drawRectangle(alpha, x1, y1, x2, y2)
+			}
 		}
 	}
 	#endregion

@@ -113,6 +113,10 @@ function drawEvent() // This is the main drawing function, place all animations 
 			_stCheckers(CHK_PATTERN.LEFT_RIGHT, CHK_TRANS.X)
 			break;
 			
+			case ST_CHECKER_LR_X_SCREENSHOT_IN:
+			_stCheckers(CHK_PATTERN.LEFT_RIGHT, CHK_TRANS.X, true)
+			break;
+			
 			case ST_CHECKER_LR_Y:
 			_stCheckers(CHK_PATTERN.LEFT_RIGHT, CHK_TRANS.Y)
 			break;
@@ -120,6 +124,8 @@ function drawEvent() // This is the main drawing function, place all animations 
 			case ST_CHECKER_LR_BOTH:
 			_stCheckers(CHK_PATTERN.LEFT_RIGHT, CHK_TRANS.BOTH)
 			break;
+			
+			
 			#endregion
 		
 			default: //ST_NONE or undefined, etc.

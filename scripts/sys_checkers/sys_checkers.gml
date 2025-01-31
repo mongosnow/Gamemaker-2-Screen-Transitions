@@ -32,9 +32,9 @@ function _stResetCheckersVariables() //for variable reset function
 	
 	// Extra animation variables
 	_checkerFadeSquare = [false, false]
-	_checkerRotateSpd = [0, 0]
 	_checkerDarkenBackground = [false, false] // WILL SYNC WITH END TIMER
 	_checkerDarkenColor = c_black
+	_checkerRotateSpd = [0, 0] // idk how to implement
 }
 
 function _stCheckers_state2_setArrays(init = false)
@@ -245,32 +245,50 @@ function _stCheckers(chk_pattern, chk_transform, useScreenshot = false, useSprit
 	var y1 = 0
 	var y2 = 0
 	
-	if useScreenshot = true
-	
-	else if useSprite = true && sprite_exists(_sprite)
+	for (var row = 0; row < _checkerAmountRow; row ++)
 	{
-		
-	}
-	else
-	{
-		for (var row = 0; row < _checkerAmountRow; row ++)
+		for (var column = 0; column < _checkerAmountColumn; column ++)
 		{
-			for (var column = 0; column < _checkerAmountColumn; column ++)
+			sizeX = _checkerMaxSize * _chk_sizeX[row][column]
+			sizeY = _checkerMaxSize * _chk_sizeY[row][column]
+			
+			_x = row * _checkerMaxSize
+			_y = column * _checkerMaxSize
+			
+			if sizeX > 0 && sizeY > 1
 			{
-				sizeX = (_checkerMaxSize * _chk_sizeX[row][column]) / 2
-				sizeY = (_checkerMaxSize * _chk_sizeY[row][column]) / 2
-			
-				_x = (row * _checkerMaxSize) + centerPoint
-				_y = (column * _checkerMaxSize) + centerPoint
-			
-				x1 = _x - sizeX
-				x2 = _x + sizeX
-				y1 = _y - sizeY
-				y2 = _y + sizeY
-			
-				if sizeX > 0 && sizeY > 1
+				if useScreenshot = true
+				{
+					if sprite_exists(spr_stSurface)
+					{
+						var offset = ((_checkerMaxSize - sizeX) ) / 2
+						
+						var _left = _x
+						var _width = sizeX
+						var _xx = _x + offset
+						
+						var _top = _y
+						var _height = _checkerMaxSize
+						var _yy = _y
+						
+
+							draw_sprite_part(spr_stSurface, 0, _left, _top, _width, _height, _xx, _yy)
+					}
+				}
+				else if useSprite = true && sprite_exists(_sprite)
+				{
+					//draw_sprite_part_ext(_sprite, image_index)
+				}
+				else
+				{
+					x1 = _x - (sizeX / 2) + centerPoint
+					x2 = _x + (sizeX / 2) + centerPoint
+					y1 = _y - (sizeY / 2) + centerPoint
+					y2 = _y + (sizeY / 2) + centerPoint
+					
 					_anim_drawRectangle(1, x1, y1, x2, y2)
-			}
+				}
+			}		
 		}
 	}
 	#endregion

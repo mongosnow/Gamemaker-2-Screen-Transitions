@@ -17,7 +17,7 @@
 
 // General //
 
-#macro DEFAULT_COLOR    c_black		//default color for transitions which use a solid color
+#macro DEFAULT_COLOR    c_aqua			//default color for transitions which use a solid color
 #macro DEFAULT_SPRITE	spr_sprite		//default sprite for transitions which use a sprite
 #macro DEFAULT_DELAY_0  0				//default delay before room changes and after out animation ends
 #macro DEFAULT_DELAY_1  0				//default delay before in animation starts after room changes
@@ -50,7 +50,7 @@
 // Checkers //
 
 #macro DEFAULT_CHECKER_SIZE 64			// Max size of squares, should be divisible by both width and height of transition area or else it will be rounded to nearest
-#macro DEFAULT_CHECKER_SPEED .25 		// Speed of checker scale change per frame | higher = faster | anything above 1 does nothing | 1 is instant
+#macro DEFAULT_CHECKER_SPEED .01 		// Speed of checker scale change per frame | higher = faster | anything above 1 does nothing | 1 is instant
 #macro DEFAULT_CHECKER_DELAY 3			// Frames between checker groups animating
 
 ////////////////////////////////////////////////////////////////////////////
