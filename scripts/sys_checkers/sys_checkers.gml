@@ -28,7 +28,7 @@ function _stResetCheckersVariables() //for variable reset function
 	_checkerArraySet = false // To prevent array creation from looping upon delay during In animation
 }
 
-function _stCheckers_state_setArray()
+function _stCheckers_state_setArrays()
 {
 	if _checkerArraySet = false
 	{
@@ -136,7 +136,7 @@ function _stCheckers(arrayType, useScreenshot = false, useSprite = false)
 			switch(_state2)
 			{
 				case 0: // Initialize variables and array
-				_stCheckers_state_setArray()
+				_stCheckers_state_setArrays()
 				_anim_state2Next()
 				break;
 				
