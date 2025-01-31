@@ -122,6 +122,18 @@ function _stCheckers_state2_setArrays(init = false)
 				}
 			}
 			break;
+			
+			case CHK_PATTERN.RIGHT_LEFT:
+			for (var row = 0; row < _checkerAmountRow; row += 1)
+			{
+			    for (var column = 0; column < _checkerAmountRow; column += 1)
+				{
+					_checkerTransformDelayTimer[row][column] = _checkerTransformDelay[_state] * (_checkerAmountRow - row)
+					
+					setAnimLength(_checkerAmountRow - 1)
+				}
+			}
+			break;
 		}
 
 	#endregion
@@ -261,23 +273,18 @@ function _stCheckers(chk_pattern, chk_transform, useScreenshot = false, useSprit
 				{
 					if sprite_exists(spr_stSurface)
 					{
-						var offset = ((_checkerMaxSize - sizeX) ) / 2
-						
-						var _left = _x
-						var _width = sizeX
-						var _xx = _x + offset
-						
-						var _top = _y
-						var _height = _checkerMaxSize
-						var _yy = _y
-						
+						var _xx = _x + ((_checkerMaxSize - sizeX) ) / 2 // Move so that square stays in center of grid location
+						var _yy = _y + ((_checkerMaxSize - sizeY) ) / 2
 
-							draw_sprite_part(spr_stSurface, 0, _left, _top, _width, _height, _xx, _yy)
+						draw_sprite_part(spr_stSurface, 0, _x, _y, sizeX, sizeY, _xx, _yy)
 					}
 				}
 				else if useSprite = true && sprite_exists(_sprite)
 				{
-					//draw_sprite_part_ext(_sprite, image_index)
+					var _xx = _x + ((_checkerMaxSize - sizeX) ) / 2 // Move so that square stays in center of grid location
+					var _yy = _y + ((_checkerMaxSize - sizeY) ) / 2
+
+					draw_sprite_part(sprite_index, image_index, _x, _y, sizeX, sizeY, _xx, _yy)
 				}
 				else
 				{
