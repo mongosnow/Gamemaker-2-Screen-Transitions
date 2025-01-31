@@ -163,18 +163,19 @@ function _stTransformScale(whichScale, useScreenshot = false, useSprite = false)
 			alpha = 1
 		
 		// Find rotation
+		var rotateCheckScale = undefined
 		switch(whichScale)
 		{
 			case 0: // X
-			var rotateCheckScale = _tScaleSizeX
+			rotateCheckScale = _tScaleSizeX
 			break;
 			
 			case 1: // Y
-			var rotateCheckScale = _tScaleSizeY
+			rotateCheckScale = _tScaleSizeY
 			break;
 			
 			default: // Both
-			var rotateCheckScale = ((_tScaleSizeX + _tScaleSizeY) / 2)
+			rotateCheckScale = ((_tScaleSizeX + _tScaleSizeY) / 2)
 			break;
 		}
 		
