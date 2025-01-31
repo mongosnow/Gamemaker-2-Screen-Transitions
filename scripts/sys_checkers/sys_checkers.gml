@@ -24,7 +24,6 @@ function _stResetCheckersVariables() //for variable reset function
 	// Checker timing variables
 	_checkerTransformSpeed = [DEFAULT_CHECKER_SPEED, DEFAULT_CHECKER_SPEED] // Checker scale change
 	_checkerTransformDelay = [DEFAULT_CHECKER_DELAY, DEFAULT_CHECKER_DELAY] // Delay between groups animating
-	_extraDelay = [false, false] // Will each iteration wait for last one to be finished?
 	_checkerEndTimer = 0
 	
 	// Checker array variables
@@ -106,12 +105,7 @@ function _stCheckers_state2_setArrays(init = false)
 			{
 				var timeToFinishOneAnim = ceil(1 / _checkerTransformSpeed[_state])
 				
-				if _extraDelay[_state] // All previous animation times combined
-					var extraDelay = iterations * timeToFinishOneAnim
-				else // Can start if previous is not finished
-					var extraDelay = 0
-				
-				_checkerEndTimer = ((iterations) * _checkerTransformDelay[_state]) + timeToFinishOneAnim + extraDelay
+				_checkerEndTimer = ((iterations) * _checkerTransformDelay[_state]) + timeToFinishOneAnim
 			}
 		}
 	
