@@ -21,7 +21,9 @@
 #macro ST_TSCALE_BOTH_SPRITE "TSCA_B_2"
 
 // Checkers //
-#macro ST_CHECKER_LEFT_TO_RIGHT "CHEC_LR_0"
+#macro ST_CHECKER_LR_X "CHEC_LR_0_0"
+#macro ST_CHECKER_LR_Y "CHEC_LR_0_1"
+#macro ST_CHECKER_LR_BOTH "CHEC_LR_0_2"
 
 /*
 

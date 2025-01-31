@@ -19,7 +19,7 @@ function _stResetCheckersVariables() //for variable reset function
 	_checkerMaxSize = DEFAULT_CHECKER_SIZE
 	
 	// Checker transform
-	_checkerScaleTransform = [CHK_TRANS.X, CHK_TRANS.Y] // 0 = X, 1 = Y, 2 = Both | Which scale to change
+	_checkerScaleTransform = CHK_TRANS.X // 0 = X, 1 = Y, 2 = Both | Which scale to change
 	
 	// Checker timing variables
 	_checkerTransformSpeed = [DEFAULT_CHECKER_SPEED, DEFAULT_CHECKER_SPEED] // Checker scale change
@@ -50,7 +50,7 @@ function _stCheckers_state2_setArrays(init = false)
 		switch(_state)
 		{
 			case IS.OUT:
-			switch(_checkerScaleTransform[_state])
+			switch(_checkerScaleTransform)
 			{
 				case CHK_TRANS.X: // X
 				sizeX = 0
@@ -160,7 +160,7 @@ function _stCheckers_state2_sizeChange()
 					else if _state = IS.IN // Increment size down to 0
 					{
 						// X scale
-						if _checkerScaleTransform[IS.IN] = CHK_TRANS.X || _checkerScaleTransform[IS.IN] = CHK_TRANS.BOTH
+						if _checkerScaleTransform = CHK_TRANS.X || _checkerScaleTransform = CHK_TRANS.BOTH
 						{
 							if _chk_sizeX[row][column] - _checkerTransformSpeed[_state] >= 0
 								_chk_sizeX[row][column] -= _checkerTransformSpeed[_state]
@@ -169,7 +169,7 @@ function _stCheckers_state2_sizeChange()
 						}
 					
 						// Y scale
-						if _checkerScaleTransform[IS.IN] = CHK_TRANS.Y || _checkerScaleTransform[IS.IN] = CHK_TRANS.BOTH
+						if _checkerScaleTransform = CHK_TRANS.Y || _checkerScaleTransform = CHK_TRANS.BOTH
 						{
 							if _chk_sizeY[row][column] - _checkerTransformSpeed[_state] >= 0
 								_chk_sizeY[row][column] -= _checkerTransformSpeed[_state]
@@ -208,10 +208,10 @@ function _stCheckers_animationPlay() // All states combined
 	}
 }
 
-function _stCheckers(chk_pattern, useScreenshot = false, useSprite = false)
+function _stCheckers(chk_pattern, chk_transform, useScreenshot = false, useSprite = false)
 {
-	if _checkerPattern = -1
-		_checkerPattern = chk_pattern
+	_checkerPattern = chk_pattern
+	_checkerScaleTransform = chk_transform
 	
 	#region Manage animation
 	switch(_state)
