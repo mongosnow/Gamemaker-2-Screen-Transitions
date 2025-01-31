@@ -1,4 +1,5 @@
 // Screen transition types (only edit if you add more) //
+// MOVE TO screenTransition <<<<<<<<<<<<<<<<<<<<
 
 // Instant transition / no transition animation //
 #macro ST_NONE "NONE"

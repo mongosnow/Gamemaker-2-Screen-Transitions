@@ -36,16 +36,22 @@
 #macro DEFAULT_TSCALE_SPEED_1 10			// In	
 #macro DEFAULT_TSCALE_ACCEL_1 1				// In
 
-#macro DEFAULT_TSCALE_X_0 (DEFAULT_WIDTH / 2)  // Middle of animation, X, Out
-#macro DEFAULT_TSCALE_Y_0 (DEFAULT_HEIGHT / 2) // Middle of animation, Y, Out
-#macro DEFAULT_TSCALE_X_1 (DEFAULT_WIDTH / 2)  // In
-#macro DEFAULT_TSCALE_Y_1 (DEFAULT_HEIGHT / 2) // In
+#macro DEFAULT_TSCALE_X_0 (DEFAULT_WIDTH / 2)	// Middle of animation, X, Out
+#macro DEFAULT_TSCALE_Y_0 (DEFAULT_HEIGHT / 2)	// Middle of animation, Y, Out
+#macro DEFAULT_TSCALE_X_1 (DEFAULT_WIDTH / 2)	// In
+#macro DEFAULT_TSCALE_Y_1 (DEFAULT_HEIGHT / 2)	 // In
 
 #macro DEFAULT_TSCALE_FADE_0 true	// Will it change transparency?
 #macro DEFAULT_TSCALE_FADE_1 true	// In
 
 #macro DEFAULT_TSCALE_ROTSPD_0 0	// Speed multiplier for rotate animation - Should be whole number - Out
 #macro DEFAULT_TSCALE_ROTSPD_1 0	// In
+
+// Checkers //
+
+#macro DEFAULT_CHECKER_SIZE 64			// Max size of squares, should be divisible by both width and height of transition area or else it will be rounded to nearest
+#macro DEFAULT_CHECKER_SPEED .25 		// Speed of checker scale change per frame | higher = faster | anything above 1 does nothing | 1 is instant
+#macro DEFAULT_CHECKER_DELAY 3			// Frames between checker groups animating
 
 ////////////////////////////////////////////////////////////////////////////
 //								ADVANCED								  //

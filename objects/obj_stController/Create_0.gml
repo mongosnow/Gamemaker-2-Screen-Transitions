@@ -40,6 +40,7 @@ function _stResetAllVariables()
 	
 	_stResetFadeVariables()
 	_stReset_stTransformScaleVariables()
+	_stResetCheckersVariables()
 }
 
 _stResetAllVariables() //initialize variables

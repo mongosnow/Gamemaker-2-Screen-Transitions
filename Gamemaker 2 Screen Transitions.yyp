@@ -63,6 +63,7 @@
     {"id":{"name":"screenTransition_set_ST_FADE","path":"scripts/screenTransition_set_ST_FADE/screenTransition_set_ST_FADE.yy",},},
     {"id":{"name":"screenTransition_set_ST_TSCALE","path":"scripts/screenTransition_set_ST_TSCALE/screenTransition_set_ST_TSCALE.yy",},},
     {"id":{"name":"screenTransition","path":"scripts/screenTransition/screenTransition.yy",},},
+    {"id":{"name":"sys_checkers","path":"scripts/sys_checkers/sys_checkers.yy",},},
     {"id":{"name":"sys_fade","path":"scripts/sys_fade/sys_fade.yy",},},
     {"id":{"name":"sys_none","path":"scripts/sys_none/sys_none.yy",},},
     {"id":{"name":"sys_surfaceFunctions","path":"scripts/sys_surfaceFunctions/sys_surfaceFunctions.yy",},},
