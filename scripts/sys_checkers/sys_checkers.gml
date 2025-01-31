@@ -1,38 +1,55 @@
+enum CHK_PATTERN
+{
+	LEFT_RIGHT = 0,
+	RIGHT_LEFT = 1
+}
+
+enum CHK_TRANS
+{
+	X = 0,
+	Y = 1,
+	BOTH = 1
+}
+
 function _stResetCheckersVariables() //for variable reset function
 {
 	// Max size of checkers
 	_checkerMaxSize = DEFAULT_CHECKER_SIZE
 	
-	// Checker scale to transform
-	_checkerScaleTransform = [0, 0] // 0 = X, 1 = Y, 2 = Both | Which scale to change
+	// Checker transform
+	_checkerPattern = [CHK_PATTERN.LEFT_RIGHT, CHK_PATTERN.LEFT_RIGHT] // 0 = Horizontal, 1 = Vertical, 2 = Diagonal
+	_checkerScaleTransform = [CHK_TRANS.X, CHK_TRANS.X] // 0 = X, 1 = Y, 2 = Both | Which scale to change
 	
 	// Checker timing variables
-	_checkerTransformSpeed = DEFAULT_CHECKER_SPEED // Checker scale change
-	_checkerTransformDelay = DEFAULT_CHECKER_DELAY // Delay between groups animating
+	_checkerTransformSpeed = [DEFAULT_CHECKER_SPEED, DEFAULT_CHECKER_SPEED] // Checker scale change
+	_checkerTransformDelay = [DEFAULT_CHECKER_DELAY, DEFAULT_CHECKER_DELAY] // Delay between groups animating
 	
-	// Checker amount
-	_checkerArraySet = false // To prevent looping upon delay during in aniamtion
+	// Checker array variables
+	_checkerArraySet = false // To prevent array creation from looping upon delay during In animation
 }
 
-function _stResetCheckersArray(outOrIn = undefined)
+function _stCheckers_state_setArray()
 {
 	if _checkerArraySet = false
 	{
+	#region Reset array default values
+		_checkerTransformDelayTimer = 0
+		
 		// Default
 		var sizeX = 0
 		var sizeY = 0
 	
-		switch(outOrIn)
+		switch(_state)
 		{
 			case IS.OUT:
 			switch(_checkerScaleTransform)
 			{
-				case 0: // X
+				case CHK_TRANS.X: // X
 				sizeX = 0
 				sizeY = 1
 				break;
 				
-				case 1: // Y
+				case CHK_TRANS.Y: // Y
 				sizeX = 0
 				sizeY = 1
 				break;
@@ -42,7 +59,7 @@ function _stResetCheckersArray(outOrIn = undefined)
 			case IS.IN:
 			sizeX = 1
 			sizeY = 1
-			_checkerArraySet = true // Prevents loopiung after In animation
+			_checkerArraySet = true // Prevents looping after In animation
 			break;
 		}
 	
@@ -50,6 +67,10 @@ function _stResetCheckersArray(outOrIn = undefined)
 		_checkerAmountRow	 = ceil(_checkerMaxSize / DEFAULT_WIDTH)
 		_checkerAmountColumn = ceil(_checkerMaxSize / DEFAULT_HEIGHT)
 		_checkerAmountTotal	 = _checkerAmountRow + _checkerAmountColumn
+		
+		// Checkers current reset
+		_checkerRowCurrent = -1
+		_checkerColumnCurrent = -1
 		
 		var isLast = function(arg0, arg1) // Return true if final entry in array
 		{
@@ -77,19 +98,31 @@ function _stResetCheckersArray(outOrIn = undefined)
 					array_resize(_chk_sizeY, _checkerAmountRow)
 					array_resize(_chk_sizeY[row], _checkerAmountColumn)
 				}
-				
-				// Delay timer reset
-				_chk_delayTimer[row][column] = 0
-				if isLast(row, column){
-					array_resize(_chk_delayTimer, _checkerAmountRow)
-					array_resize(_chk_delayTimer[row], _checkerAmountColumn)
-				}
 			}
 		}
+	#endregion
+	
+	#region Set pattern array values
+		switch(_checkerPattern[_state])
+		{
+			case CHK_PATTERN.LEFT_RIGHT:
+			for (var row = 0; row < _checkerAmountRow; row ++) //square draw
+			{
+				for (var column = 0; column < _checkerAmountColumn; column ++)
+					_checkerTransformDelayTimer[row][column] = _checkerTransformDelay * column
+			}
+			break;
+		}
+	#endregion
 	}
 }
 
-function _stCheckers(arrayType, reverse = false, useScreenshot = false, useSprite = false)
+function _stCheckers_state_sizeChange()
+{
+	
+}
+
+function _stCheckers(arrayType, useScreenshot = false, useSprite = false)
 {
 	switch(_state)
 	{
@@ -103,8 +136,12 @@ function _stCheckers(arrayType, reverse = false, useScreenshot = false, useSprit
 			switch(_state2)
 			{
 				case 0: // Initialize variables and array
-				_stResetCheckersArray(_state)
+				_stCheckers_state_setArray()
 				_anim_state2Next()
+				break;
+				
+				case 1: // Grow
+				
 				break;
 				
 				default:
@@ -122,7 +159,7 @@ function _stCheckers(arrayType, reverse = false, useScreenshot = false, useSprit
 		switch(_state2)
 		{
 			case 0:
-			_stResetCheckersArray(_state)
+			_stCheckers_resetArray(_state)
 			_anim_state2Next()
 			break;
 			
@@ -136,6 +173,9 @@ function _stCheckers(arrayType, reverse = false, useScreenshot = false, useSprit
 	}
 	
 	#region Draw
+	//for row
+	//for column
+	//draw 
 	/*
 	var x1 = x
 	var y1 = y
