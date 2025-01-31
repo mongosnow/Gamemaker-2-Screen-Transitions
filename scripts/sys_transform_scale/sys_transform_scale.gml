@@ -18,13 +18,9 @@ function _stReset_stTransformScaleVariables() //for variable reset function
 	_tScaleRotateSpd = [DEFAULT_TSCALE_ROTSPD_0, DEFAULT_TSCALE_ROTSPD_1]
 }
 
-function _tScaleSpeedReturn(state) // Manage speed
+function _tScaleSpeedIncrease(state) // Manage speed
 {
-	var unit = 1/_tScaleSpeed[state]
-		
 	_tScaleSpeed[state] += _tScaleAccel[state]
-		
-	return unit
 }
 
 //////////////  
@@ -73,7 +69,7 @@ function _stTransformScale(whichScale, useScreenshot = false, useSprite = false)
 				break;
 				
 				case 1:
-				var unit = _tScaleSpeedReturn(IS.OUT)
+				var unit = _tScaleSpeed[IS.OUT]
 				
 				if _tScaleSizeX + unit < 1 // Increase x scale
 					_tScaleSizeX += unit
@@ -84,6 +80,8 @@ function _stTransformScale(whichScale, useScreenshot = false, useSprite = false)
 					_tScaleSizeY += unit
 				else
 					_tScaleSizeY = 1
+					
+				_tScaleSpeedIncrease(IS.OUT)
 					
 				if _tScaleSizeX >= 1 && _tScaleSizeY >= 1 // When both max size, proceed
 					_anim_state2Next()
@@ -112,7 +110,7 @@ function _stTransformScale(whichScale, useScreenshot = false, useSprite = false)
 			break;
 				
 			case 1:
-			var unit = _tScaleSpeedReturn(IS.IN)
+			var unit = _tScaleSpeed[IS.IN]
 			
 			if whichScale = 0 || whichScale = 2 // X and Both
 			{
@@ -129,6 +127,8 @@ function _stTransformScale(whichScale, useScreenshot = false, useSprite = false)
 				else
 					_tScaleSizeY = 0
 			}
+			
+			_tScaleSpeedIncrease(IS.IN)
 			
 			// Check if animation finished then proceed
 			

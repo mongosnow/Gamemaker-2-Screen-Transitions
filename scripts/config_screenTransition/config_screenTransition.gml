@@ -31,10 +31,10 @@
 
 // Transform scale //
 
-#macro DEFAULT_TSCALE_SPEED_0 10			// Start speed of animation out | lower = faster | animSpeed = width / this
-#macro DEFAULT_TSCALE_ACCEL_0 2				// Amount animation speed changes by each frame out | negative speeds it up, positive slows it down
-#macro DEFAULT_TSCALE_SPEED_1 10			// In	
-#macro DEFAULT_TSCALE_ACCEL_1 1				// In
+#macro DEFAULT_TSCALE_SPEED_0 .1			// Start speed of animation out | higher = faster | >=1 does nothing
+#macro DEFAULT_TSCALE_ACCEL_0 -.001			// Amount animation speed changes by each frame out | negative speeds it up, positive slows it down
+#macro DEFAULT_TSCALE_SPEED_1 .1			// In	
+#macro DEFAULT_TSCALE_ACCEL_1 -.001				// In
 
 #macro DEFAULT_TSCALE_X_0 (DEFAULT_WIDTH / 2)	// Middle of animation, X, Out
 #macro DEFAULT_TSCALE_Y_0 (DEFAULT_HEIGHT / 2)	// Middle of animation, Y, Out
