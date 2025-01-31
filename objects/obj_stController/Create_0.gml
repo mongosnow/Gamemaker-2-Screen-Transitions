@@ -109,45 +109,169 @@ function drawEvent() // This is the main drawing function, place all animations 
 			#endregion
 			
 			#region Checkers
-			case ST_CHECKER_LR_X:
-			_stCheckers(CHK_PATTERN.LEFT_RIGHT, CHK_TRANS.X)
-			break;
+				#region LR
+				case ST_CHECKER_LR_X:
+				_stCheckers(CHK_PATTERN.LEFT_RIGHT, CHK_TRANS.X)
+				break;
 			
-			case ST_CHECKER_LR_X_SCREENSHOT_IN:
-			_stCheckers(CHK_PATTERN.LEFT_RIGHT, CHK_TRANS.X, true)
-			break;
+				case ST_CHECKER_LR_X_SCREENSHOT_IN:
+				_stCheckers(CHK_PATTERN.LEFT_RIGHT, CHK_TRANS.X, true)
+				break;
 			
-			case ST_CHECKER_LR_X_SPRITE:
-			_stCheckers(CHK_PATTERN.LEFT_RIGHT, CHK_TRANS.X, false, true)
-			break;
+				case ST_CHECKER_LR_X_SPRITE:
+				_stCheckers(CHK_PATTERN.LEFT_RIGHT, CHK_TRANS.X, false, true)
+				break;
 			
-			case ST_CHECKER_LR_Y:
-			_stCheckers(CHK_PATTERN.LEFT_RIGHT, CHK_TRANS.Y)
-			break;
+				case ST_CHECKER_LR_Y:
+				_stCheckers(CHK_PATTERN.LEFT_RIGHT, CHK_TRANS.Y)
+				break;
 			
-			case ST_CHECKER_LR_Y_SCREENSHOT_IN:
-			_stCheckers(CHK_PATTERN.LEFT_RIGHT, CHK_TRANS.Y, true)
-			break;
+				case ST_CHECKER_LR_Y_SCREENSHOT_IN:
+				_stCheckers(CHK_PATTERN.LEFT_RIGHT, CHK_TRANS.Y, true)
+				break;
 			
-			case ST_CHECKER_LR_Y_SPRITE:
-			_stCheckers(CHK_PATTERN.LEFT_RIGHT, CHK_TRANS.Y, false, true)
-			break;
+				case ST_CHECKER_LR_Y_SPRITE:
+				_stCheckers(CHK_PATTERN.LEFT_RIGHT, CHK_TRANS.Y, false, true)
+				break;
 			
-			case ST_CHECKER_LR_BOTH:
-			_stCheckers(CHK_PATTERN.LEFT_RIGHT, CHK_TRANS.BOTH)
-			break;
+				case ST_CHECKER_LR_BOTH:
+				_stCheckers(CHK_PATTERN.LEFT_RIGHT, CHK_TRANS.BOTH)
+				break;
 			
-			case ST_CHECKER_LR_BOTH_SCREENSHOT_IN:
-			_stCheckers(CHK_PATTERN.LEFT_RIGHT, CHK_TRANS.BOTH, true)
-			break;
+				case ST_CHECKER_LR_BOTH_SCREENSHOT_IN:
+				_stCheckers(CHK_PATTERN.LEFT_RIGHT, CHK_TRANS.BOTH, true)
+				break;
 			
-			case ST_CHECKER_LR_BOTH_SPRITE:
-			_stCheckers(CHK_PATTERN.LEFT_RIGHT, CHK_TRANS.BOTH, false, true)
-			break;
+				case ST_CHECKER_LR_BOTH_SPRITE:
+				_stCheckers(CHK_PATTERN.LEFT_RIGHT, CHK_TRANS.BOTH, false, true)
+				break;
+				#endregion
 			
-			case ST_CHECKER_RL_X:
-			_stCheckers(CHK_PATTERN.RIGHT_LEFT, CHK_TRANS.X)
-			break;
+				#region RL
+				case ST_CHECKER_RL_X:
+				_stCheckers(CHK_PATTERN.RIGHT_LEFT, CHK_TRANS.X)
+				break;
+			
+				case ST_CHECKER_RL_X_SCREENSHOT_IN:
+				_stCheckers(CHK_PATTERN.RIGHT_LEFT, CHK_TRANS.X, true)
+				break;
+			
+				case ST_CHECKER_RL_X_SPRITE:
+				_stCheckers(CHK_PATTERN.RIGHT_LEFT, CHK_TRANS.X, false, true)
+				break;
+			
+				case ST_CHECKER_RL_Y:
+				_stCheckers(CHK_PATTERN.RIGHT_LEFT, CHK_TRANS.Y)
+				break;
+			
+				case ST_CHECKER_RL_Y_SCREENSHOT_IN:
+				_stCheckers(CHK_PATTERN.RIGHT_LEFT, CHK_TRANS.Y, true)
+				break;
+			
+				case ST_CHECKER_RL_Y_SPRITE:
+				_stCheckers(CHK_PATTERN.RIGHT_LEFT, CHK_TRANS.Y, false, true)
+				break;
+			
+				case ST_CHECKER_RL_BOTH:
+				_stCheckers(CHK_PATTERN.RIGHT_LEFT, CHK_TRANS.BOTH)
+				break;
+			
+				case ST_CHECKER_RL_BOTH_SCREENSHOT_IN:
+				_stCheckers(CHK_PATTERN.RIGHT_LEFT, CHK_TRANS.BOTH, true)
+				break;
+			
+				case ST_CHECKER_RL_BOTH_SPRITE:
+				_stCheckers(CHK_PATTERN.RIGHT_LEFT, CHK_TRANS.BOTH, false, true)
+				break;
+				#endregion
+				
+				#region UD
+				case ST_CHECKER_UD_X:
+            	_stCheckers(CHK_PATTERN.UP_DOWN, CHK_TRANS.X)
+            	break;
+       	 
+            	case ST_CHECKER_UD_X_SCREENSHOT_IN:
+            	_stCheckers(CHK_PATTERN.UP_DOWN, CHK_TRANS.X, true)
+            	break;
+       	 
+            	case ST_CHECKER_UD_X_SPRITE:
+            	_stCheckers(CHK_PATTERN.UP_DOWN, CHK_TRANS.X, false. true)
+            	break;
+       	 
+            	case ST_CHECKER_UD_Y:
+            	_stCheckers(CHK_PATTERN.UP_DOWN, CHK_TRANS.Y)
+            	break;
+       	 
+            	case ST_CHECKER_UD_Y_SCREENSHOT_IN:
+            	_stCheckers(CHK_PATTERN.UP_DOWN, CHK_TRANS.Y, true)
+            	break;
+       	 
+            	case ST_CHECKER_UD_Y_SPRITE:
+            	_stCheckers(CHK_PATTERN.UP_DOWN, CHK_TRANS.Y, false, true)
+            	break;
+       	 
+            	case ST_CHECKER_UD_BOTH:
+            	_stCheckers(CHK_PATTERN.UP_DOWN, CHK_TRANS.BOTH)
+            	break;
+       	 
+            	case ST_CHECKER_UD_BOTH_SCREENSHOT_IN:
+            	_stCheckers(CHK_PATTERN.UP_DOWN, CHK_TRANS.BOTH, true)
+            	break;
+       	 
+            	case ST_CHECKER_UD_BOTH_SPRITE:
+            	_stCheckers(CHK_PATTERN.UP_DOWN, CHK_TRANS.BOTH, false, true)
+            	break;
+				#endregion
+				
+				#region DU
+				case ST_CHECKER_DU_X:
+            	_stCheckers(CHK_PATTERN.DOWN_UP, CHK_TRANS.X)
+            	break;
+       	 
+            	case ST_CHECKER_DU_X_SCREENSHOT_IN:
+            	_stCheckers(CHK_PATTERN.DOWN_UP, CHK_TRANS.X, true)
+            	break;
+       	 
+            	case ST_CHECKER_DU_X_SPRITE:
+            	_stCheckers(CHK_PATTERN.DOWN_UP, CHK_TRANS.X, false, true)
+            	break;
+       	 
+            	case ST_CHECKER_DU_Y:
+            	_stCheckers(CHK_PATTERN.DOWN_UP, CHK_TRANS.Y)
+            	break;
+       	 
+            	case ST_CHECKER_DU_Y_SCREENSHOT_IN:
+            	_stCheckers(CHK_PATTERN.DOWN_UP, CHK_TRANS.Y, true)
+            	break;
+       	 
+            	case ST_CHECKER_DU_Y_SPRITE:
+            	_stCheckers(CHK_PATTERN.DOWN_UP, CHK_TRANS.Y, false, true)
+            	break;
+       	 
+            	case ST_CHECKER_DU_BOTH:
+            	_stCheckers(CHK_PATTERN.DOWN_UP, CHK_TRANS.BOTH)
+            	break;
+       	 
+            	case ST_CHECKER_DU_BOTH_SCREENSHOT_IN:
+            	_stCheckers(CHK_PATTERN.DOWN_UP, CHK_TRANS.BOTH, true)
+            	break;
+       	 
+            	case ST_CHECKER_DU_BOTH_SPRITE:
+            	_stCheckers(CHK_PATTERN.DOWN_UP, CHK_TRANS.BOTH, false, true)
+            	break;
+				#endregion
+				
+				#region DIAG_UL_TO_DR
+				#endregion
+				
+				#region DIAG_UR_TO_DL
+				#endregion
+				
+				#region DIAG_DL_TO_UR
+				
+				#endregion
+				#region DIAG_DR_TO_UL
+				#endregion
 			#endregion
 		
 			default: //ST_NONE or undefined, etc.

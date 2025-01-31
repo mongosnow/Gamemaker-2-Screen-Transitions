@@ -1,7 +1,15 @@
 enum CHK_PATTERN
 {
-	LEFT_RIGHT = 0,
-	RIGHT_LEFT = 1
+	LEFT_RIGHT,
+	RIGHT_LEFT,
+	
+	UP_DOWN,
+	DOWN_UP,
+	
+	DIAG_UPLEFT_DOWNRIGHT,
+	DIAG_UPRIGHT_DOWNLEFT,
+	DIAG_DOWNLEFT_UPRIGHT,
+	DIAG_UPLEFT_DOWNRIGHT
 }
 
 enum CHK_TRANS
@@ -111,10 +119,11 @@ function _stCheckers_state2_setArrays(init = false)
 	
 		switch(_checkerPattern) // Add new patterns here
 		{
+			#region Horizontal
 			case CHK_PATTERN.LEFT_RIGHT:
 			for (var row = 0; row < _checkerAmountRow; row += 1)
 			{
-			    for (var column = 0; column < _checkerAmountRow; column += 1)
+			    for (var column = 0; column < _checkerAmountColumn; column += 1)
 				{
 					_checkerTransformDelayTimer[row][column] = _checkerTransformDelay[_state] * row
 					
@@ -126,7 +135,7 @@ function _stCheckers_state2_setArrays(init = false)
 			case CHK_PATTERN.RIGHT_LEFT:
 			for (var row = 0; row < _checkerAmountRow; row += 1)
 			{
-			    for (var column = 0; column < _checkerAmountRow; column += 1)
+			    for (var column = 0; column < _checkerAmountColumn; column += 1)
 				{
 					_checkerTransformDelayTimer[row][column] = _checkerTransformDelay[_state] * (_checkerAmountRow - row)
 					
@@ -134,6 +143,33 @@ function _stCheckers_state2_setArrays(init = false)
 				}
 			}
 			break;
+			#endregion
+			
+			#region Vertical
+			case CHK_PATTERN.UP_DOWN:
+			for (var row = 0; row < _checkerAmountRow; row += 1)
+			{
+			    for (var column = 0; column < _checkerAmountColumn; column += 1)
+				{
+					_checkerTransformDelayTimer[row][column] = _checkerTransformDelay[_state] * column
+					
+					setAnimLength(_checkerAmountColumn - 1)
+				}
+			}
+			break;
+			
+			case CHK_PATTERN.DOWN_UP:
+			for (var row = 0; row < _checkerAmountRow; row += 1)
+			{
+			    for (var column = 0; column < _checkerAmountColumn; column += 1)
+				{
+					_checkerTransformDelayTimer[row][column] = _checkerTransformDelay[_state] * (_checkerAmountColumn - column)
+					
+					setAnimLength(_checkerAmountColumn - 1)
+				}
+			}
+			break;
+			#endregion
 		}
 
 	#endregion
