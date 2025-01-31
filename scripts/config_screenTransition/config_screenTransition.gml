@@ -25,7 +25,7 @@
 // Fade //
 
 #macro DEFAULT_FADE_SPEED_0 .02			// speed of fade animation out
-#macro DEFAULT_FADE_SPEED_1 .02			// speed of fade animation in
+#macro DEFAULT_FADE_SPEED_1 .02			// In
 #macro DEFAULT_FADE_ACCEL_0 0			// How much animation speed will increase by over time - Out
 #macro DEFAULT_FADE_ACCEL_1 0			// In
 
