@@ -30,8 +30,8 @@ function _stResetCheckersVariables() //for variable reset function
 	_checkerScaleTransform = CHK_TRANS.X // 0 = X, 1 = Y, 2 = Both | Which scale to change
 	
 	// Checker timing variables
-	_checkerTransformSpeed = [DEFAULT_CHECKER_SPEED, DEFAULT_CHECKER_SPEED] // Checker scale change
-	_checkerTransformDelay = [DEFAULT_CHECKER_DELAY, DEFAULT_CHECKER_DELAY] // Delay between groups animating
+	_checkerTransformSpeed = [DEFAULT_CHECKER_SPEED_0, DEFAULT_CHECKER_SPEED_1] // Checker scale change
+	_checkerTransformDelay = [DEFAULT_CHECKER_DELAY_0, DEFAULT_CHECKER_DELAY_1] // Delay between groups animating
 	_checkerEndTimer = 0
 	_checkerEndTimerMax = 1
 	
@@ -40,9 +40,9 @@ function _stResetCheckersVariables() //for variable reset function
 	_stCheckers_state2_setArrays(true)
 	
 	// Extra animation variables
-	_checkerFadeSquare = [DEFAULT_CHECKER_FADE_SQUARE, DEFAULT_CHECKER_FADE_SQUARE]
-	_checkerDarkenBackground = [DEFAULT_CHECKER_FADE_BG, DEFAULT_CHECKER_FADE_BG]
-	_checkerDarkenBackgroundMaxAlpha = DEFAULT_CHECKER_MAX_BG_ALPHA
+	_checkerFadeSquare = [DEFAULT_CHECKER_FADE_SQUARE_0, DEFAULT_CHECKER_FADE_SQUARE_1]
+	_checkerDarkenBackground = [DEFAULT_CHECKER_FADE_BG_0, DEFAULT_CHECKER_FADE_BG_1]
+	_checkerDarkenBackgroundMaxAlpha = [DEFAULT_CHECKER_MAX_BG_ALPHA_0, DEFAULT_CHECKER_MAX_BG_ALPHA_1]
 	_checkerDarkenColor = DEFAULT_CHECKER_BG_COLOR
 	_checkerRotateSpd = [0, 0] // idk how to implement
 }
@@ -293,7 +293,7 @@ function _stCheckers(chk_pattern, chk_transform, useScreenshot = false, useSprit
 			else if _state = IS.IN
 				alpha = 1 - (1 * ((_checkerEndTimerMax - _checkerEndTimer) / _checkerEndTimerMax))
 		
-			_anim_drawRectangle(alpha * _checkerDarkenBackgroundMaxAlpha, , , , , _checkerDarkenColor)
+			_anim_drawRectangle(alpha * _checkerDarkenBackgroundMaxAlpha[_state], , , , , _checkerDarkenColor)
 		}
 		
 		// Find center point

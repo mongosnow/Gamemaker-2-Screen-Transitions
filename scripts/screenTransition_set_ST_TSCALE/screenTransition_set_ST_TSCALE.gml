@@ -18,14 +18,17 @@ function screenTransition_set_ST_TSCALE // Use this AFTER screenTransition to se
 	with (obj_stController)
 	{
 			// Anim time
-			_tScaleSpeed = [DEFAULT_TSCALE_SPEED_0, DEFAULT_TSCALE_SPEED_1]
-			_tScaleAccel = [DEFAULT_TSCALE_ACCEL_0, DEFAULT_TSCALE_ACCEL_1]
+			_tScaleSpeed = [animSpeedOut, animSpeedIn]
+			_tScaleAccel = [animAccelOut, animAccelIn]
 	
 			// Screen center
-			_tScaleLocX  = [DEFAULT_TSCALE_X_0, DEFAULT_TSCALE_X_1]
-			_tScaleLocY  = [DEFAULT_TSCALE_Y_0, DEFAULT_TSCALE_Y_1]
+			_tScaleLocX  = [xOriginOut, xOriginIn]
+			_tScaleLocY  = [yOriginOut, yOriginIn]
 	
 			// Fade
-			_tScaleFade  = [DEFAULT_TSCALE_FADE_0, DEFAULT_TSCALE_FADE_1]
+			_tScaleFade  = [fadeOut, fadeIn]
+			
+			// Rotate
+			_tScaleRotateSpd = [rotateSpdOut, rotateSpdIn]
 	}
 }
