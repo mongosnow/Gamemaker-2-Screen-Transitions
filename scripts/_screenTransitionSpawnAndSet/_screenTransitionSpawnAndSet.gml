@@ -2,12 +2,20 @@
 
 function _screenTransitionCreateAndSetControllerObject(layerToUse)
 {
+	// Initialize global variable if first run
+	if !variable_global_exists("screenTransitionObject") 
+		global.screenTransitionObject = -1
+	
+	// Activate controller
+	instance_activate_object(global.screenTransitionObject)
+	
+	// Get layer ID
 	var layerID = layer_get_id(layerToUse)
 	
-	// if the controller does not exist, make it 
+	// If the controller does not exist for some reason, create it
 	if !instance_exists(obj_stController)
 		global.screenTransitionObject = instance_create_layer(0, 0, layerID, obj_stController)
-	// if the controller does exist, move it to the appropriate layer
-	else 
-		layer_add_instance(layerID, global.screenTransitionObject)
+	
+	// Move it to the appropriate layer	
+	layer_add_instance(layerID, global.screenTransitionObject)
 }

@@ -18,5 +18,8 @@ function _anim_stateNext()
 		}
 	}
 	else //reset self, both animations are over
+	{
 		_stResetAllVariables()
+		instance_deactivate_object(global.screenTransitionObject)
+	}
 }
