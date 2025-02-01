@@ -173,6 +173,56 @@ function _stCheckers_state2_setArrays(init = false)
 			}
 			break;
 			#endregion
+			
+			#region Diagonal
+			case CHK_PATTERN.DIAG_UPLEFT_DOWNRIGHT:
+			for (var row = 0; row < _checkerAmountRow; row += 1)
+			{
+			    for (var column = 0; column < _checkerAmountColumn; column += 1)
+				{
+					_checkerTransformDelayTimer[row][column] = _checkerTransformDelay[_state] * (column + row)
+					
+					setAnimLength(_checkerAmountColumn + _checkerAmountRow - 2)
+				}
+			}
+			break;
+			
+			case CHK_PATTERN.DIAG_UPRIGHT_DOWNLEFT:
+			for (var row = 0; row < _checkerAmountRow; row += 1)
+			{
+			    for (var column = 0; column < _checkerAmountColumn; column += 1)
+				{
+					_checkerTransformDelayTimer[row][column] = _checkerTransformDelay[_state] * (_checkerAmountRow - row + column)
+					
+					setAnimLength(_checkerAmountColumn + _checkerAmountRow - 2)
+				}
+			}
+			break;
+			
+			case CHK_PATTERN.DIAG_DOWNRIGHT_UPLEFT:
+			for (var row = 0; row < _checkerAmountRow; row += 1)
+			{
+			    for (var column = 0; column < _checkerAmountColumn; column += 1)
+				{
+					_checkerTransformDelayTimer[row][column] = _checkerTransformDelay[_state] * ((_checkerAmountColumn - column) + (_checkerAmountRow - row))
+					
+					setAnimLength(_checkerAmountColumn + _checkerAmountRow - 2)
+				}
+			}
+			break;
+			
+			case CHK_PATTERN.DIAG_DOWNLEFT_UPRIGHT:
+			for (var row = 0; row < _checkerAmountRow; row += 1)
+			{
+			    for (var column = 0; column < _checkerAmountColumn; column += 1)
+				{
+					_checkerTransformDelayTimer[row][column] = _checkerTransformDelay[_state] * (_checkerAmountColumn - column + row)
+					
+					setAnimLength(_checkerAmountColumn + _checkerAmountRow - 2)
+				}
+			}
+			break;
+			#endregion
 		}
 
 	#endregion

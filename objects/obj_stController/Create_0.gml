@@ -262,15 +262,155 @@ function drawEvent() // This is the main drawing function, place all animations 
 				#endregion
 				
 				#region DIAG_UL_TO_DR
+				case ST_CHECKER_DIAG_UL_TO_DR_X:
+            	_stCheckers(CHK_PATTERN.DIAG_UPLEFT_DOWNRIGHT, CHK_TRANS.X)
+            	break;
+       	 
+            	case ST_CHECKER_DIAG_UL_TO_DR_X_SCREENSHOT_IN:
+            	_stCheckers(CHK_PATTERN.DIAG_UPLEFT_DOWNRIGHT, CHK_TRANS.X, true)
+            	break;
+       	 
+            	case ST_CHECKER_DIAG_UL_TO_DR_X_SPRITE:
+            	_stCheckers(CHK_PATTERN.DIAG_UPLEFT_DOWNRIGHT, CHK_TRANS.X, false, true)
+            	break;
+       	 
+            	case ST_CHECKER_DIAG_UL_TO_DR_Y:
+            	_stCheckers(CHK_PATTERN.DIAG_UPLEFT_DOWNRIGHT, CHK_TRANS.Y)
+            	break;
+       	 
+            	case ST_CHECKER_DIAG_UL_TO_DR_Y_SCREENSHOT_IN:
+            	_stCheckers(CHK_PATTERN.DIAG_UPLEFT_DOWNRIGHT, CHK_TRANS.Y, true)
+            	break;
+       	 
+            	case ST_CHECKER_DIAG_UL_TO_DR_Y_SPRITE:
+            	_stCheckers(CHK_PATTERN.DIAG_UPLEFT_DOWNRIGHT, CHK_TRANS.Y, false, true)
+            	break;
+       	 
+            	case ST_CHECKER_DIAG_UL_TO_DR_BOTH:
+            	_stCheckers(CHK_PATTERN.DIAG_UPLEFT_DOWNRIGHT, CHK_TRANS.BOTH)
+            	break;
+       	 
+            	case ST_CHECKER_DIAG_UL_TO_DR_BOTH_SCREENSHOT_IN:
+            	_stCheckers(CHK_PATTERN.DIAG_UPLEFT_DOWNRIGHT, CHK_TRANS.BOTH, true)
+            	break;
+       	 
+            	case ST_CHECKER_DIAG_UL_TO_DR_BOTH_SPRITE:
+            	_stCheckers(CHK_PATTERN.DIAG_UPLEFT_DOWNRIGHT, CHK_TRANS.BOTH, false, true)
+            	break;
 				#endregion
 				
 				#region DIAG_UR_TO_DL
+				case ST_CHECKER_DIAG_UR_TO_DL_X:
+            	_stCheckers(CHK_PATTERN.DIAG_UPRIGHT_DOWNLEFT, CHK_TRANS.X)
+            	break;
+       	 
+            	case ST_CHECKER_DIAG_UR_TO_DL_X_SCREENSHOT_IN:
+            	_stCheckers(CHK_PATTERN.DIAG_UPRIGHT_DOWNLEFT, CHK_TRANS.X, true)
+            	break;
+       	 
+            	case ST_CHECKER_DIAG_UR_TO_DL_X_SPRITE:
+            	_stCheckers(CHK_PATTERN.DIAG_UPRIGHT_DOWNLEFT, CHK_TRANS.X, false, true)
+            	break;
+       	 
+            	case ST_CHECKER_DIAG_UR_TO_DL_Y:
+            	_stCheckers(CHK_PATTERN.DIAG_UPRIGHT_DOWNLEFT, CHK_TRANS.Y)
+            	break;
+       	 
+            	case ST_CHECKER_DIAG_UR_TO_DL_Y_SCREENSHOT_IN:
+            	_stCheckers(CHK_PATTERN.DIAG_UPRIGHT_DOWNLEFT, CHK_TRANS.Y, true)
+            	break;
+       	 
+            	case ST_CHECKER_DIAG_UR_TO_DL_Y_SPRITE:
+            	_stCheckers(CHK_PATTERN.DIAG_UPRIGHT_DOWNLEFT, CHK_TRANS.Y, false, true)
+            	break;
+       	 
+            	case ST_CHECKER_DIAG_UR_TO_DL_BOTH:
+            	_stCheckers(CHK_PATTERN.DIAG_UPRIGHT_DOWNLEFT, CHK_TRANS.BOTH)
+            	break;
+       	 
+            	case ST_CHECKER_DIAG_UR_TO_DL_BOTH_SCREENSHOT_IN:
+            	_stCheckers(CHK_PATTERN.DIAG_UPRIGHT_DOWNLEFT, CHK_TRANS.BOTH, true)
+            	break;
+       	 
+            	case ST_CHECKER_DIAG_UR_TO_DL_BOTH_SPRITE:
+            	_stCheckers(CHK_PATTERN.DIAG_UPRIGHT_DOWNLEFT, CHK_TRANS.BOTH, false, true)
+            	break;
 				#endregion
 				
 				#region DIAG_DL_TO_UR
-				
+				case ST_CHECKER_DIAG_DL_TO_UR_X:
+            	_stCheckers(CHK_PATTERN.DIAG_DOWNLEFT_UPRIGHT, CHK_TRANS.X)
+            	break;
+       	 
+            	case ST_CHECKER_DIAG_DL_TO_UR_X_SCREENSHOT_IN:
+            	_stCheckers(CHK_PATTERN.DIAG_DOWNLEFT_UPRIGHT, CHK_TRANS.X, true)
+            	break;
+       	 
+            	case ST_CHECKER_DIAG_DL_TO_UR_X_SPRITE:
+            	_stCheckers(CHK_PATTERN.DIAG_DOWNLEFT_UPRIGHT, CHK_TRANS.X, false, true)
+            	break;
+       	 
+            	case ST_CHECKER_DIAG_DL_TO_UR_Y:
+            	_stCheckers(CHK_PATTERN.DIAG_DOWNLEFT_UPRIGHT, CHK_TRANS.Y)
+            	break;
+       	 
+            	case ST_CHECKER_DIAG_DL_TO_UR_Y_SCREENSHOT_IN:
+            	_stCheckers(CHK_PATTERN.DIAG_DOWNLEFT_UPRIGHT, CHK_TRANS.Y, true)
+            	break;
+       	 
+            	case ST_CHECKER_DIAG_DL_TO_UR_Y_SPRITE:
+            	_stCheckers(CHK_PATTERN.DIAG_DOWNLEFT_UPRIGHT, CHK_TRANS.Y, false, true)
+            	break;
+       	 
+            	case ST_CHECKER_DIAG_DL_TO_UR_BOTH:
+            	_stCheckers(CHK_PATTERN.DIAG_DOWNLEFT_UPRIGHT, CHK_TRANS.BOTH)
+            	break;
+       	 
+            	case ST_CHECKER_DIAG_DL_TO_UR_BOTH_SCREENSHOT_IN:
+            	_stCheckers(CHK_PATTERN.DIAG_DOWNLEFT_UPRIGHT, CHK_TRANS.BOTH, true)
+            	break;
+       	 
+            	case ST_CHECKER_DIAG_DL_TO_UR_BOTH_SPRITE:
+            	_stCheckers(CHK_PATTERN.DIAG_DOWNLEFT_UPRIGHT, CHK_TRANS.BOTH, false, true)
+            	break;
 				#endregion
+				
 				#region DIAG_DR_TO_UL
+				case ST_CHECKER_DIAG_DR_TO_UL_X:
+            	_stCheckers(CHK_PATTERN.DIAG_DOWNRIGHT_UPLEFT, CHK_TRANS.X)
+            	break;
+       	 
+            	case ST_CHECKER_DIAG_DR_TO_UL_X_SCREENSHOT_IN:
+            	_stCheckers(CHK_PATTERN.DIAG_DOWNRIGHT_UPLEFT, CHK_TRANS.X, true)
+            	break;
+       	 
+            	case ST_CHECKER_DIAG_DR_TO_UL_X_SPRITE:
+            	_stCheckers(CHK_PATTERN.DIAG_DOWNRIGHT_UPLEFT, CHK_TRANS.X, false, true)
+            	break;
+       	 
+            	case ST_CHECKER_DIAG_DR_TO_UL_Y:
+            	_stCheckers(CHK_PATTERN.DIAG_DOWNRIGHT_UPLEFT, CHK_TRANS.Y)
+            	break;
+       	 
+            	case ST_CHECKER_DIAG_DR_TO_UL_Y_SCREENSHOT_IN:
+            	_stCheckers(CHK_PATTERN.DIAG_DOWNRIGHT_UPLEFT, CHK_TRANS.Y, true)
+            	break;
+       	 
+            	case ST_CHECKER_DIAG_DR_TO_UL_Y_SPRITE:
+            	_stCheckers(CHK_PATTERN.DIAG_DOWNRIGHT_UPLEFT, CHK_TRANS.Y, false, true)
+            	break;
+       	 
+            	case ST_CHECKER_DIAG_DR_TO_UL_BOTH:
+            	_stCheckers(CHK_PATTERN.DIAG_DOWNRIGHT_UPLEFT, CHK_TRANS.BOTH)
+            	break;
+       	 
+            	case ST_CHECKER_DIAG_DR_TO_UL_BOTH_SCREENSHOT_IN:
+            	_stCheckers(CHK_PATTERN.DIAG_DOWNRIGHT_UPLEFT, CHK_TRANS.BOTH, true)
+            	break;
+       	 
+            	case ST_CHECKER_DIAG_DR_TO_UL_BOTH_SPRITE:
+            	_stCheckers(CHK_PATTERN.DIAG_DOWNRIGHT_UPLEFT, CHK_TRANS.BOTH, false, true)
+            	break;
 				#endregion
 			#endregion
 		
