@@ -195,7 +195,7 @@ function drawEvent() // This is the main drawing function, place all animations 
             	break;
        	 
             	case ST_CHECKER_UD_X_SPRITE:
-            	_stCheckers(CHK_PATTERN.UP_DOWN, CHK_TRANS.X, false. true)
+            	_stCheckers(CHK_PATTERN.UP_DOWN, CHK_TRANS.X, false, true)
             	break;
        	 
             	case ST_CHECKER_UD_Y:

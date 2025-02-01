@@ -11,8 +11,8 @@ function screenTransition_set_ST_FADE // Use this AFTER screenTransition to set 
 {
 	if !useDifferentIn // Copy  values to in
 	{
-		fadeSpeedIn  = fadeSpeed
-		fadeAccelIn  = fadeAccel	
+		fadeSpeedIn = fadeSpeed
+		fadeAccelIn = fadeAccel
 	}
 	
 	with (obj_stController)
