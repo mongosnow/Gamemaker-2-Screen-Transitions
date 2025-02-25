@@ -9,7 +9,9 @@ enum CHK_PATTERN
 	DIAG_UPLEFT_DOWNRIGHT,
 	DIAG_UPRIGHT_DOWNLEFT,
 	DIAG_DOWNLEFT_UPRIGHT,
-	DIAG_DOWNRIGHT_UPLEFT
+	DIAG_DOWNRIGHT_UPLEFT,
+	
+	SPIRAL_0
 }
 
 enum CHK_TRANS
@@ -52,7 +54,6 @@ function _stCheckers_state2_setArrays(init = false)
 	if _checkerArraySet = false
 	{
 	#region Reset array default values
-	
 		// Default
 		var sizeX = 0
 		var sizeY = 0
@@ -84,7 +85,7 @@ function _stCheckers_state2_setArrays(init = false)
 		// Ammount of checkers in each row and column
 		_checkerAmountRow	 = ceil(DEFAULT_WIDTH / _checkerMaxSize)
 		_checkerAmountColumn = ceil(DEFAULT_HEIGHT / _checkerMaxSize)
-		_checkerAmountTotal	 = _checkerAmountRow + _checkerAmountColumn
+		_checkerAmountTotal	 = _checkerAmountRow * _checkerAmountColumn
 		
 		// Checker size management arrays
 		for (var row = 0; row < _checkerAmountRow; row += 1)
@@ -223,6 +224,79 @@ function _stCheckers_state2_setArrays(init = false)
 			}
 			break;
 			#endregion
+			
+			case CHK_PATTERN.SPIRAL_0:
+			// Top left of grid
+			var row = 0
+			var column = 0
+			var dir = 0 // 0 = right, 1 = down, 2 = left, 3 = up
+			var count = 0 // which square
+			
+			var rowMax = _checkerAmountRow - 1
+			var rowMin = 0
+			var columnMax = _checkerAmountColumn - 1
+			var columnMin = 0
+			
+			_checkerTransformDelayTimer[0][0] = 0
+			
+			while (count < _checkerAmountTotal)
+			{
+				switch(dir)
+				{
+					case 0: // right
+					if row < rowMax
+					{
+						row ++
+						_checkerTransformDelayTimer[row][column] = _checkerTransformDelay[_state] * count
+						count ++
+					}
+					else
+						dir ++
+					break;
+					
+					case 1: // down
+					if column < columnMax
+					{
+						column ++
+						_checkerTransformDelayTimer[row][column] = _checkerTransformDelay[_state] * count
+						count ++
+					}
+					else
+						dir ++
+					break;
+					
+					case 2: // left
+					if row > 0 + rowMin
+					{
+						row --
+						_checkerTransformDelayTimer[row][column] = _checkerTransformDelay[_state] * count
+						count ++
+					}
+					else
+						dir ++ 
+					break;
+					
+					case 3: // up
+					if column > columnMin
+					{
+						column --
+						_checkerTransformDelayTimer[row][column] = _checkerTransformDelay[_state] * count
+						count ++
+					}
+					else{
+						rowMax --
+						rowMin ++
+						columnMax --
+						columnMin ++
+						
+						dir = 0
+					}
+					break;
+				}
+			}
+			
+			setAnimLength(_checkerAmountTotal)
+			break;
 		}
 
 	#endregion
@@ -237,7 +311,6 @@ function _stCheckers_state2_sizeChange()
 	if _checkerEndTimer > 0 // Check if over
 	{
 		#region Increment size and delay timer arrays
-	
 		for (var row = 0; row < _checkerAmountRow; row ++)
 		{
 			for (var column = 0; column < _checkerAmountColumn; column ++)
@@ -331,6 +404,7 @@ function _stCheckers(chk_pattern, chk_transform, useScreenshot = false, useSprit
 	#endregion
 	
 	#region Draw squares
+	
 	if _state < 2 // Prevent crash on final frame
 	{
 		var alpha = 1
@@ -342,8 +416,9 @@ function _stCheckers(chk_pattern, chk_transform, useScreenshot = false, useSprit
 				alpha = 1 * ((_checkerEndTimerMax - _checkerEndTimer) / _checkerEndTimerMax)
 			else if _state = IS.IN
 				alpha = 1 - (1 * ((_checkerEndTimerMax - _checkerEndTimer) / _checkerEndTimerMax))
-		
-			_anim_drawRectangle(alpha * _checkerDarkenBackgroundMaxAlpha[_state], , , , , _checkerDarkenColor)
+			
+			if _state2 != 0
+				_anim_drawRectangle(alpha * _checkerDarkenBackgroundMaxAlpha[_state], , , , , _checkerDarkenColor)
 		}
 		
 		// Find center point

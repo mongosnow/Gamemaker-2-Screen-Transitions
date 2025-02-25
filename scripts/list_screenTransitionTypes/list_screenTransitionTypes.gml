@@ -108,22 +108,12 @@
 	#macro ST_CHECKER_DIAG_DR_TO_UL_BOTH_SCREENSHOT_IN "CHEC_DIAG_DR_TO_UL_0_2_1"
 	#macro ST_CHECKER_DIAG_DR_TO_UL_BOTH_SPRITE "CHEC_DIAG_DR_TO_UL_0_2_2"
 	#endregion
+	#region Spiral
+	//#macro ST_CHECKER_SPIRAL_X "CHEC_SPIRAL_0_0_0"
+	#endregion
 #endregion
 
 /*
-
-#macro ST_CHECKER_RIGHT_TO_LEFT "CHEC_RL_0"
-#macro ST_CHECKER_UP_TO_DOWN	"CHEC_UD_0"
-#macro ST_CHECKER_DOWN_TO_UP	"CHEC_DU_0"
-#macro ST_CHECKER_DIAGONAL_UP_LEFT_TO_DOWN_RIGHT "CHEC_ULDR_0"
-#macro ST_CHECKER_DIAGONAL_DOWN_RIGHT_TO_UP_LEFT "CHEC_DRUL_0"
-
-//REMOVE THIS 
-// Variables for Checkers //
-#macro CHECKER_TRANSFORM_XSCALE 0 //will change x scale from center
-#macro CHECKER_TRANSFORM_YSCALE 1 //will change y scale from center
-#macro CHECKER_TRANSFORM_BOTH 2 //will change x and y scale from center
-
 // (TO DO) //
 Screen move -- Will move from direction in to center. 
 	will move image toward a direction in to center of screen, 
@@ -132,6 +122,3 @@ speed 20 (do like transform with % of screen)
 accel 0
 fade t/f
 rotate 0
-
-
-

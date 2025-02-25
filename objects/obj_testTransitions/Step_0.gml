@@ -8,5 +8,5 @@ if room = rm
 
 if keyboard_check_pressed(vk_numpad0)
 {
-	 screenTransition(rm, ST_CHECKER_DIAG_DR_TO_UL_BOTH, ST_CHECKER_DIAG_UL_TO_DR_X_SPRITE)
-}	
+	 screenTransition(rm, ST_CHECKER_LR_BOTH_SCREENSHOT_IN, ST_CHECKER_LR_BOTH_SCREENSHOT_IN)
+}

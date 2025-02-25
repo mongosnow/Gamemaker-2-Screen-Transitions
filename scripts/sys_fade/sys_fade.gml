@@ -44,7 +44,6 @@ function _stFade(useScreenshot = false, useSprite = false)
 		
 		#region IN
 		case IS.IN:
-		
 		switch(_state2) // Increment animation
 		{
 			case 0: // Set alpha
@@ -73,7 +72,6 @@ function _stFade(useScreenshot = false, useSprite = false)
 	}
 	
 	#region Draw
-	
 	if useScreenshot // Draw surface sprite
 	{
 		if sprite_exists(spr_stSurface)
