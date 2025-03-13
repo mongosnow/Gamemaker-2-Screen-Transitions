@@ -54,7 +54,7 @@ Call screenTransition (located in the "Functions" folder) where you would put ro
 
 # Things you can do that may not be obvious
 - If you leave the "changeRoomTo" argument blank on the screenTransition function, it will do the animation without changing rooms.
-- 
+  
 # To do
 - Make more animations (slide, spiral checker)
 - Add the option to do the animation in a particular section of the screen rather than over the entire screen
