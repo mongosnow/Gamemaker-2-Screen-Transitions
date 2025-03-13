@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"sys_surfaceFunctions",
   "parent":{
-    "name":"Animations and Drawing",
-    "path":"folders/screenTransition/(System -- Don't call these)/Animations and Drawing.yy",
+    "name":"Surface Functions",
+    "path":"folders/screenTransition/System (Don't call these)/Drawing/Surface Functions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

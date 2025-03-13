@@ -1,34 +1,96 @@
-//default values (edit these)
-//you don't need to call this script, they're loaded automatically
+// Default values (edit these)
+// You don't need to call this script, they're loaded automatically
 
+////////////////////////////////////////////////////////////////////////////
+//								GENERAL									  //
+////////////////////////////////////////////////////////////////////////////
 
-// Default layer to play animations on
-// Will be moved to a depth lower than all other layers each time it is used
-#macro SCREEN_TRANSITION_DEFAULT_LAYER	"screenTransition"
+// Name of layer to play animations on			   // IMPORTANT: Will be moved to a depth lower than all other layers each time a transition plays. 
+#macro SCREEN_TRANSITION_LAYER	"screenTransition" // Don't set this name to any pre-existing layer
 
+// Which draw event do animations run in by default
+#macro DEFAULT_DRAWEVENT 1 //1 = Draw GUI, 0 = Draw
+					   
+////////////////////////////////////////////////////////////////////////////
+//							ANIMATION DEFAULTS							  //
+////////////////////////////////////////////////////////////////////////////
 
+/////////////
 // General //
+/////////////
 
-#macro SCREEN_TRANSITION_DEFAULT_WIDTH	camera_get_view_width(view_camera[0])	//default width of transitions
-#macro SCREEN_TRANSITION_DEFAULT_HEIGHT	camera_get_view_height(view_camera[0])	//default height of transitions
+#macro DEFAULT_COLOR    c_black			//default color for transitions which use a solid color
 
-#macro SCREEN_TRANSITION_DEFAULT_COLOR c_black	//default color for draw color of solid squares and fade color
-#macro SCREEN_TRANSITION_DEFAULT_DELAY 0		//default delay to transition in and out (will it pause before room change on out and animation on in)
+#macro DEFAULT_SPRITE	spr_sprite		//default sprite for transitions which use a sprite
 
-// Fade Transtion //
+#macro DEFAULT_DELAY_0  0				//default delay before room changes and after out animation ends
+#macro DEFAULT_DELAY_1  0				//default delay before in animation starts after room changes
 
-#macro SCREEN_TRANSITION_DEFAULT_FADE_SPEED	.02	//default speed of fade animation
+//////////
+// Fade //
+//////////
 
+// Out //
+#macro DEFAULT_FADE_SPEED_0 .02		// speed of fade animation out
+#macro DEFAULT_FADE_ACCEL_0 0		// How much animation speed will increase by over time - Out
 
-// Checker Transition //
+// In //
+#macro DEFAULT_FADE_SPEED_1 DEFAULT_FADE_SPEED_0
+#macro DEFAULT_FADE_ACCEL_1 DEFAULT_FADE_ACCEL_0
 
-#macro SCREEN_TRANSITION_DEFAULT_CHECKER_DELAY	3	//the frames between each row of checkers spawning
-#macro SCREEN_TRANSITION_DEFAULT_CHECKER_SIZE	96	// size of squares
-#macro SCREEN_TRANSITION_DEFAULT_CHECKER_CHANGE	.25 //(MUST BE DIVISIBLE BY 1) the scale at which the squares are transformed by
+/////////////////////
+// Transform scale //
+/////////////////////
 
-#macro SCREEN_TRANSITION_DEFAULT_CHECKER_FADEFX true //will the area below the checkers fade to a color?
-#macro SCREEN_TRANSITION_DEFAULT_CHECKER_FADECOLOR c_black //what color fades below the checkers?
+// Out //
+#macro DEFAULT_TSCALE_SPEED_0  .1						// Start speed of animation out | higher = faster | >=1 does nothing
+#macro DEFAULT_TSCALE_ACCEL_0  -.001					// Amount animation speed changes by each frame out | negative speeds it up, positive slows it down
+#macro DEFAULT_TSCALE_X_0	   (DEFAULT_WIDTH / 2)		// Middle of animation, X, Out
+#macro DEFAULT_TSCALE_Y_0	   (DEFAULT_HEIGHT / 2)		// Middle of animation, Y, Out
+#macro DEFAULT_TSCALE_FADE_0   true						// Will it change transparency?
+#macro DEFAULT_TSCALE_ROTSPD_0 0						// Speed multiplier for rotate animation - Should be whole number - Out
 
-// Advanced //
+// In //
+#macro DEFAULT_TSCALE_SPEED_1  DEFAULT_TSCALE_SPEED_0	
+#macro DEFAULT_TSCALE_ACCEL_1  DEFAULT_TSCALE_ACCEL_0	
+#macro DEFAULT_TSCALE_X_1	   DEFAULT_TSCALE_X_0	
+#macro DEFAULT_TSCALE_Y_1	   DEFAULT_TSCALE_Y_0	
+#macro DEFAULT_TSCALE_FADE_1   DEFAULT_TSCALE_FADE_0
+#macro DEFAULT_TSCALE_ROTSPD_1 DEFAULT_TSCALE_ROTSPD_0
 
-#macro SCREEN_TRANSITION_ALLOW_ROOMCHANGE_ON_IN_INPUT false //does the transition function let you change rooms when calling an "IN" transition (likely leave false)
+//////////////
+// Checkers //
+//////////////
+
+// Out //
+#macro DEFAULT_CHECKER_SIZE			  64		// Max size of squares, should be divisible by both width and height of transition area or else it will be rounded to nearest
+#macro DEFAULT_CHECKER_SPEED_0		  .25 		// Speed of checker scale change per frame | higher = faster | anything above 1 does nothing | 1 is instant
+#macro DEFAULT_CHECKER_DELAY_0		  3			// Frames between checker groups animating
+#macro DEFAULT_CHECKER_FADE_SQUARE_0  false		// Will the square change opacity during the animation?
+#macro DEFAULT_CHECKER_FADE_BG_0	  true		// Will the background fade to a color during the animation?
+#macro DEFAULT_CHECKER_MAX_BG_ALPHA_0 .65		// The max opacity the background will become
+#macro DEFAULT_CHECKER_BG_COLOR		  c_black	// Color of background ^
+
+// In //
+#macro DEFAULT_CHECKER_SPEED_1		  DEFAULT_CHECKER_SPEED_0 	
+#macro DEFAULT_CHECKER_DELAY_1		  DEFAULT_CHECKER_DELAY_0		
+#macro DEFAULT_CHECKER_FADE_SQUARE_1  DEFAULT_CHECKER_FADE_SQUARE_0
+#macro DEFAULT_CHECKER_FADE_BG_1	  DEFAULT_CHECKER_FADE_BG_0		
+#macro DEFAULT_CHECKER_MAX_BG_ALPHA_1 DEFAULT_CHECKER_MAX_BG_ALPHA_0
+
+////////////////////////////////////////////////////////////////////////////
+//								ADVANCED								  //
+////////////////////////////////////////////////////////////////////////////
+
+// Will it check object depth by default?
+#macro DEFAULT_CHECK_OBJECT_DEPTH false // Default = false | Uses more memory to initialize animation if true
+
+// Screen size //
+
+// Top left corner coordinates -- Editing may cause issues
+#macro DEFAULT_X camera_get_view_x(view_camera[0])
+#macro DEFAULT_Y camera_get_view_y(view_camera[0])
+
+// Default area for screen transitions to take up (Bottom right coordinates)
+#macro DEFAULT_WIDTH  camera_get_view_width(view_camera[0])
+#macro DEFAULT_HEIGHT camera_get_view_height(view_camera[0])

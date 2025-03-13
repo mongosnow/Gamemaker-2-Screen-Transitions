@@ -1,47 +1,48 @@
-// For taking screenshots or copying what is on screen
+//sprite_create_from_surface() <<USE THIS
 
-function _surfaceInitialize() // put in create event
+function _surfaceClear() // Put in clean up and create event
 {
-	// screenshot variables
-	_surface = -1
-	_surfaceBuffer = -1
-
-	_surfaceWidth = SCREEN_TRANSITION_DEFAULT_WIDTH
-	_surfaceHeight = SCREEN_TRANSITION_DEFAULT_HEIGHT
+	var initialize = function() // Screenshot variables
+	{
+		_surface = -1 // Surface
+		spr_stSurface = -1 // Sprite
+	}
 	
-	_surfaceExists = false
+	if !variable_instance_exists(id, "_surface") // Initialize variables on first run
+		initialize()
+	
+	// Clear sprite and surface from memory if they exist
+	
+	if surface_exists(_surface)
+		surface_free(_surface)
+		
+	if sprite_exists(spr_stSurface)
+		sprite_delete(spr_stSurface)
+	
+	initialize() // Reset variables
 }
-
 
 function _surfaceTakeScreenshot() // put in post-draw event, run once
 {
-	//initialize if have not
-	if !variable_instance_exists(id, "_surfaceExists")
-		_surfaceInitialize()
+	// Surface find size
+	var x1 = 0
+	var y1 = 0
+	var x2 = surface_get_width(application_surface)
+	var y2 = surface_get_height(application_surface)
 	
-	// take screenshot
-	_surface = surface_create(_surfaceWidth, _surfaceHeight)
+	// Take screenshot
+	_surface = surface_create(x2, y2)
 	surface_set_target(_surface)
-	draw_surface(application_surface,0,0)
+	draw_surface(application_surface, x1, y1)
+	
+	// Delete old sprite from memory
+	if sprite_exists(spr_stSurface)
+		sprite_delete(spr_stSurface)
+	
+	// Create sprite from screenshot
+	spr_stSurface = sprite_create_from_surface(_surface, x1, y1, x2, y2, false, false, 0, 0)
+	
+	// Clear surface/screenshot
 	surface_reset_target()
-		
-	// backup to buffer
-	if buffer_exists(_surfaceBuffer) 
-		buffer_delete(_surfaceBuffer)
-		
-	_surfaceBuffer = buffer_create(_surfaceWidth * _surfaceHeight * 4, buffer_fixed, 1)
-	buffer_get_surface(_surfaceBuffer, _surface, 0)
-	
-	_surfaceExists = true
-}
-
-function surfaceCleanUp() // put in clean up event
-{
-	if surface_exists(_surface)
-		surface_free(_surface)
-
-	if buffer_exists(_surfaceBuffer)
-		buffer_delete(_surfaceBuffer)
-	
-	_surfaceInitialize() //reset variables
+	surface_free(_surface)
 }
