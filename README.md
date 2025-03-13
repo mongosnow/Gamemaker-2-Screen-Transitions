@@ -19,6 +19,7 @@ Colored checkers grow in a pattern and then shrink (in and out pattern types are
 - You can adjust the scale the checkers grow and shrink by (x scale, y scale, or both).
 - There is a fading effect that happens behind the checkers, which you can toggle on or off.
 - You can change the color of the fade effect and the checkers themselves (default is black for both).
+- There are 3 different main patterns: horizontal, vertical, and diagonal.
 
 ### Fade
 ![fade](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExeDFxOXFnbXE2M2hwcjc2aTQ4aGU1bGM5N2VlaDZ2NmZmZ3g4dHhsdyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/50cEFPLpVgmyRxpDGV/giphy.gif)
@@ -31,7 +32,10 @@ Is the classic fade in and out most games have, especially in black.
 
 #### Other features
 - You can change the fade in and fade out speeds separately.
-  
+
+### Animations not pictured
+- Transform scale
+
 # How to add to a project
 1. Open file by either...
 - Dragging and dropping the .yymps into your project, then clicking "Yes"
