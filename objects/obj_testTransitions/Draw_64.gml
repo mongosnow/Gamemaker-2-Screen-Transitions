@@ -24,8 +24,5 @@ if instance_exists(obj_stController)
 		"\nTRANSFORMTYPE = "+string(obj_stController._checkerScaleTransform)+
 		"\nPATTERN = "+string(obj_stController._checkerPattern)+
 		"\nENDTIME = "+string(obj_stController._checkerEndTimer)
-		
-		
-		
 	)
 }

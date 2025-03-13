@@ -45,6 +45,7 @@
   "resources":[
     {"id":{"name":"obj_stController","path":"objects/obj_stController/obj_stController.yy",},},
     {"id":{"name":"obj_testTransitions","path":"objects/obj_testTransitions/obj_testTransitions.yy",},},
+    {"id":{"name":"obj_testTransitionsInteractable","path":"objects/obj_testTransitionsInteractable/obj_testTransitionsInteractable.yy",},},
     {"id":{"name":"rm_init","path":"rooms/rm_init/rm_init.yy",},},
     {"id":{"name":"rm_leaves","path":"rooms/rm_leaves/rm_leaves.yy",},},
     {"id":{"name":"rm_squares","path":"rooms/rm_squares/rm_squares.yy",},},

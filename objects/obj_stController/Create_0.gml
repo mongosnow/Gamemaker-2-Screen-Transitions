@@ -414,9 +414,9 @@ function drawEvent() // This is the main drawing function, place all animations 
 				#endregion
 				
 				#region SPIRAL
-				case ST_CHECKER_SPIRAL_X:
-            	_stCheckers(CHK_PATTERN.SPIRAL_0, CHK_TRANS.X)
-				break;
+				//case ST_CHECKER_SPIRAL_X:
+            	//_stCheckers(CHK_PATTERN.SPIRAL_0, CHK_TRANS.X)
+				//break;
 				#endregion
 			#endregion
 		
