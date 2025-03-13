@@ -63,3 +63,4 @@ Call screenTransition (located in the "Functions" folder) where you would put ro
 - Make more animations (slide, spiral checker)
 - Add the option to do the animation in a particular section of the screen rather than over the entire screen
 - Fix a bug where "ST_NONE" does not transition the room
+- Make the test menu have all the editable variables
