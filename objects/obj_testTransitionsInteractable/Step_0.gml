@@ -67,5 +67,6 @@ if keyDo
 	if room = rm
 		rm = rm_squares
 	
-	screenTransition(rm, _transitionTable[_hChoice[0]], _transitionTable[_hChoice[1]], _hChoice[2], _hChoice[3])
+	screenTransition(rm, _transitionTable[_hChoice[0]], _transitionTable[_hChoice[1]])
+	screenTransition_set_delay(_hChoice[2], _hChoice[3])
 }

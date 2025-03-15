@@ -115,6 +115,7 @@
 
 /*
 // (TO DO) //
+//spiral checkers
 Screen move -- Will move from direction in to center. 
 	will move image toward a direction in to center of screen, 
 		find loc with circle line cast with spawn at loc outside of bounds.
