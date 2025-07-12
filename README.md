@@ -3,7 +3,7 @@
 
 It essentially replaces the room_goto() function and adds animations that hide the room change. The animations use surfaces for smooth and unique-looking room transitions. It still has the option to do all the animations with a color though (like the classic fade to black then fade back that many games have), or use a sprite.
 
-I made this system to drag and drop into my own projects, and I thought it would be nice to make it public 💚
+I made this system to drag and drop into my own projects.
 # Animations
 
 ### Checkers
@@ -28,7 +28,7 @@ Colored checkers grow in a pattern and then shrink (in and out pattern types are
 Cuts to the next room by fading out a screenshot of the previous one.
 
 #### Color version: 
-Is the classic fade in and out most games have, especially in black.
+Will fade to a color and then out.
 
 #### Other features
 - You can change the fade in and fade out speeds separately.
@@ -52,7 +52,7 @@ Call screenTransition (located in the "Functions" folder) where you would put ro
 # Things to be aware of
 - When calling the main function, it creates a temporary persistent object that manages the animation, so **be careful about deactivating all instances or destroying all objects,** or else the animation will be canceled, and the room will not change.
 - The transitions will always play at a depth lower than all other layers, unless a specific layer is specified (meaning they will appear above everything else on screen by default).
-- Animations play in the GUI draw even by default, but you can make it run in the draw event with the "whichDrawEvent" parameter.
+- Animations play in the GUI draw event by default, but you can make it run in the draw event with the "whichDrawEvent" parameter.
 - Anything on the GUI layer _will disappear_ during _SCREENSHOT_IN transitions
 - It will only check for the lowest layer depth unless the parameter "loopThroughObjects" is set to true, in which it will check for the lowest object depth in addition to layer.
 
